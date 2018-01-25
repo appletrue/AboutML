@@ -1,4 +1,4 @@
-` 以下文档在markdown 本地文档中生效,在github 页面不现实渲染效果.`
+` 以下文档在markdown 本地文档中生效,在github 页面不现实渲染效果.Google浏览器安装了插件`github-mathjax`之后,显示数学公式`
 
 # **如何在Markdown中书写数学公式**
 
