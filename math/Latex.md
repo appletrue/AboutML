@@ -147,30 +147,25 @@
 
 ### 关系运算符
 
-| 符号   | 代码        |符号   | 代码|
-| ---- | ------------ |------|------|
-| ±±   | `\pm`        | ∐∐   | `\coprod`    |
-| ××   | `\times`     | ∏∏   | `\prod`      |
-| ÷÷   | `\div`       | ∑∑   | `\sum`       |
-| ∣∣   | `\mid`     | ≡≡   | `\equiv`     |
-| ∤∤   | `\nmid`      |≈≈   | `\approx`    |
-| ⋅⋅   | `\cdot`      |≠≠   | `\neq`       |
-| ∘∘   | `\circ`      |≤≤   | `\leq`       |
-| ∗∗   | `\ast`       | ≥≥   | `\geq`       |
-| ⨀⨀   | `\bigodot`   |⨁⨁   | `\bigoplus`  |
-| ⨂⨂   | `\bigotimes` || | 
+| 符号   | 代码        |符号   | 代码|符号   | 代码|
+| ---- | ------------|------|------|------|------|
+| ±±   | `\pm`       | ××   | `\times`     |  ∐∐   | `\coprod`    |
+| ÷÷   | `\div`      | ∑∑   | `\sum`       |∏∏   | `\prod`      |
+| ∣∣  | `\mid`     | ≡≡   | `\equiv`     | ∤∤   | `\nmid`      |
+|  ≈≈   | `\approx`  | ⋅⋅   | `\cdot`      |≠≠   | `\neq`       |
+| ∘∘   | `\circ`      |≤≤   | `\leq`       | ≥≥   | `\geq`       |
+| ∗∗   | `\ast`   | ⨀⨀   | `\bigodot`   |⨁⨁   | `\bigoplus`  |
+| ⨂⨂   | `\bigotimes` || | | | 
 
 ### 集合运算符
 
-| 符号   | 代码   |符号   | 代码   |
-| ---- | ----------- |---- | ----------- |
-| ∅∅   | `\emptyset` | ∈∈   | `\in`       |
-| ∉∉   | `\notin`    | ⊂⊂   | `\subset`   |
-| ⊃⊃   | `\supset`   | ⊆⊆   | `\subseteq` |
-| ⊇⊇   | `\supseteq` | ⋂⋂   | `\bigcap`   |
-| ⋃⋃   | `\bigcup`   | ⋁⋁   | `\bigvee`   |
-| ⋀⋀   | `\bigwedge` | ⨄⨄   | `\biguplus` |
-| ⨆⨆   | `\bigsqcup` |||
+| 符号   | 代码   |  符号   | 代码   |   符号   | 代码   |
+| ---- | ----------- |---- | ----------- |---- | ----------- |
+| ∅∅   | `\emptyset` | ∈∈ | `\in`     | ∉∉   | `\notin`  |  
+| ⊂⊂   | `\subset`   | ⊃⊃  | `\supset` | ⊆⊆   | `\subseteq` |
+| ⊇⊇   | `\supseteq` | ⋂⋂  | `\bigcap` | ⋃⋃   | `\bigcup`   |
+| ⋁⋁   | `\bigvee`   | ⋀⋀   | `\bigwedge` | ⨄⨄   | `\biguplus` |
+| ⨆⨆   | `\bigsqcup` |||||
 
 ### 对数运算符
 
@@ -182,16 +177,12 @@
 
 ### 三角运算符
 
-| 符号     | 代码       |
-| ------ | -------- |
-| ⊥⊥     | `\bot`   |
-| ∠∠     | `\angle` |
-| sinsin | `\sin`   |
-| coscos | `\cos`   |
-| tantan | `\tan`   |
-| cotcot | `\cot`   |
-| secsec | `\sec`   |
-| csccsc | `\csc`   |
+| 符号     | 代码    |符号   | 代码     |
+| ------ | -------- |------ | -------- |
+| ⊥⊥     | `\bot` | ∠∠   | `\angle` |
+| sinsin | `\sin`   | coscos | `\cos`   |
+| tantan | `\tan`   | cotcot | `\cot`   |
+| secsec | `\sec`   | csccsc | `\csc`   |
 
 ### 微积分运算符
 
@@ -207,19 +198,19 @@
 
 ## 下标、上标、积分
 
-| 功能                                       | 语法                                       | 渲染                                       |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| 上标                                       | `a^2`                                    | $a^2$                                    |
-| 下标                                       | `a_2`                                    | $a_2$                                    |
-| 分组                                       | `a^{2+2}`                                | $a^{2+2}$                                |
-|                                          | `a_{i,j}`                                | $a_{i,j}$                                |
-| 组合上下标                                    | `x_2^3`                                  | $x_2^3$                                  |
-|                                          | `{x_2}^3`                                | ${x_2}^3$                                |
-|                                          | `10^{10^{8}}`                            | $10^{10^{8}}$                            |
-| Preceding and/or Additional sub & super  | `_nP_k`                                  | $ _{n}P_{k}$                             |
-| \sideset                                 | `\sideset{_1^2}{_3^4}\prod_a^b`          | $\sideset{_1^2}{_3^4}\prod_a^b$          |
-|                                          | `{}_1^2\!\Omega_3^4`                     | $ {}_1^2\!\Omega_3^4$                    |
-| 堆叠                                 | `\overset{\alpha}{\omega}`               | $\overset{\alpha}{\omega}$               |
+| 功能                                       | 语法                                | 渲染                                 |
+| ---------------------------------------- | ---------------------------------------- | -------------------------------- |
+| 上标                                     | `a^2`                                   | $a^2$                           |
+| 下标                                     | `a_2`                                   | $a_2$                          |
+| 分组                                     | `a^{2+2}`                               | $a^{2+2}$                       |
+|                                          | `a_{i,j}`                                | $a_{i,j}$                        |
+| 组合上下标                                | `x_2^3`                                  | $x_2^3$                          |
+|                                          | `{x_2}^3`                                | ${x_2}^3$                        |
+|                                          | `10^{10^{8}}`                            | $10^{10^{8}}$                    |
+| Preceding and/or Additional sub & super  | `_nP_k`                                  | $ _{n}P_{k}$                     |
+| \sideset                                 | `\sideset{_1^2}{_3^4}\prod_a^b`          | $\sideset{_1^2}{_3^4}\prod_a^b$  |
+|                                          | `{}_1^2\!\Omega_3^4`                     | $ {}_1^2\!\Omega_3^4$            |
+| 堆叠                                 | `\overset{\alpha}{\omega}`               | $\overset{\alpha}{\omega}$           |
 |                                  | `\underset{\alpha}{\omega}`              | $\underset{\alpha}{\omega}$              |
 |                            | `\overset{\alpha}{\underset{\gamma}{\omega}}` | $\overset{\alpha}{\underset{\gamma}{\omega}}$ |
 |                                          | `\stackrel{\alpha}{\omega}`              | $\stackrel{\alpha}{\omega}$              |
@@ -262,24 +253,24 @@
 | Large ("display style") fractions        | `\dfrac{k}{k-1} = 0.5`                   | $ \dfrac{k}{k-1} = 0.5$                  |
 | Mixture of large and small fractions     | `\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n` | $ \dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$ |
 | Continued fractions (note the difference in formatting) | `\cfrac{2}{ c + \cfrac{2}{ d + \cfrac{1}{2} } } = a\qquad\dfrac{2}{ c + \dfrac{2}{ d + \dfrac{1}{2} } } = a` | $\cfrac{2}{ c + \cfrac{2}{ d + \cfrac{1}{2} } } = a \qquad \dfrac{2}{ c + \dfrac{2}{ d + \dfrac{1}{2} } } = a$ |
-| Binomial coefficients                    | `\binom{n}{k}`                           | $ \binom{n}{k}$                          |
-| Small ("text style") binomial coefficients | `\tbinom{n}{k}`                          | $ \tbinom{n}{k}$                         |
-| Large ("display style") binomial coefficients | `\dbinom{n}{k}`                          | $ \dbinom{n}{k}$                         |
-| 矩阵                         | `\begin{matrix}x & y \\z & v \end{matrix}` | $\begin{matrix} x & y \\ z & v  \end{matrix}$ |
-|                             | `\begin{vmatrix}x & y \\z & v \end{vmatrix}` | $\begin{vmatrix} x & y \\ z & v  \end{vmatrix}$ |
-|                             | `\begin{Vmatrix}x & y \\z & v\end{Vmatrix}` | $\begin{Vmatrix} x & y \\ z & v \end{Vmatrix}$ |
-|                             | `\begin{bmatrix} 0& \cdots & 0\\ \vdots & \ddots & \vdots \\0& \cdots & 0 \end{bmatrix}` | $\begin{bmatrix} 0      & \cdots & 0      \\ \vdots & \ddots & \vdots \\  0      & \cdots & 0 \end{bmatrix}$ |
-|                                          | `\begin{Bmatrix} x & y \\ z & v \end{Bmatrix}` | $\begin{Bmatrix} x & y \\ z & v \end{Bmatrix}$ |
-|                                          | `\begin{pmatrix} x & y \\ z & v  \end{pmatrix}` | $\begin{pmatrix} x & y \\ z & v  \end{pmatrix}$ |
-|                                          | `\bigl( \begin{smallmatrix} a&b\\ c&d \end{smallmatrix} \bigr)` | $\bigl( \begin{smallmatrix} a&b\\ c&d \end{smallmatrix} \bigr)$ |
-| 数组                                       | `\begin{array}{|c|c||c|} a & b & S \\ \hline 0&0&1\\ 0&1&1\\ 1&0&1\\ 1&1&0 \end{array}` | $\begin{array}{|c|c||c|} a & b & S \\ \hline 0&0&1\\ 0&1&1\\ 1&0&1\\ 1&1&0 \end{array}$ |
-| Cases                                    | `f(n) = \begin{cases} n/2,  & \mbox{if }n\mbox{ is even} \\3n+1, & \mbox{if }n\mbox{ is odd} \end{cases}` | $f(n) =  \begin{cases}  n/2,  & \mbox{if }n\mbox{ is even} \\ 3n+1, & \mbox{if }n\mbox{ is odd}  \end{cases}$ |
-| System of equations                      | `\begin{cases}3x + 5y +  z &= 1 \\7x - 2y + 4z &= 2 \\-6x + 3y + 2z &= 3\end{cases}` | $\begin{cases} 3x + 5y +  z &= 1 \\ 7x - 2y + 4z &= 2 \\ -6x + 3y + 2z &= 3 \end{cases}$ |
+| Binomial coefficients      | `\binom{n}{k}`        | $ \binom{n}{k}$         |
+| Small ("text style") binomial coefficients | `\tbinom{n}{k}`      | $ \tbinom{n}{k}$     |
+| Large ("display style") binomial coefficients | `\dbinom{n}{k}`      | $ \dbinom{n}{k}$      |
+| 矩阵  | `\begin{matrix}x & y \\z & v \end{matrix}` | $\begin{matrix} x & y \\ z & v  \end{matrix}$ |
+|   | `\begin{vmatrix}x & y \\z & v \end{vmatrix}` | $\begin{vmatrix} x & y \\ z & v  \end{vmatrix}$ |
+|   | `\begin{Vmatrix}x & y \\z & v\end{Vmatrix}` | $\begin{Vmatrix} x & y \\ z & v \end{Vmatrix}$ |
+|    | `\begin{bmatrix} 0& \cdots & 0\\ \vdots & \ddots & \vdots \\0& \cdots & 0 \end{bmatrix}` | $\begin{bmatrix}0&\cdots&0\\\vdots & \ddots & \vdots \\  0      & \cdots & 0 \end{bmatrix}$ |
+|    | `\begin{Bmatrix} x & y \\ z & v \end{Bmatrix}` | $\begin{Bmatrix} x & y \\ z & v \end{Bmatrix}$ |
+|  | `\begin{pmatrix} x & y \\ z & v  \end{pmatrix}` | $\begin{pmatrix} x & y \\ z & v  \end{pmatrix}$ |
+|  | `\bigl( \begin{smallmatrix} a&b\\ c&d \end{smallmatrix} \bigr)` | $\bigl( \begin{smallmatrix} a&b\\ c&d \end{smallmatrix} \bigr)$ |
+| 数组  | `\begin{array}{|c|c||c|} a & b & S \\ \hline 0&0&1\\ 0&1&1\\ 1&0&1\\ 1&1&0 \end{array}` | $\begin{array}{|c|c||c|} a & b & S \\ \hline 0&0&1\\ 0&1&1\\ 1&0&1\\ 1&1&0 \end{array}$ |
+| Cases   | `f(n) = \begin{cases} n/2,  & \mbox{if }n\mbox{ is even} \\3n+1, & \mbox{if }n\mbox{ is odd} \end{cases}` | $f(n) =  \begin{cases}  n/2,  & \mbox{if }n\mbox{ is even} \\ 3n+1, & \mbox{if }n\mbox{ is odd}  \end{cases}$ |
+| System of equations | `\begin{cases}3x + 5y +  z &= 1 \\7x - 2y + 4z &= 2 \\-6x + 3y + 2z &= 3\end{cases}` | $\begin{cases} 3x + 5y +  z &= 1 \\ 7x - 2y + 4z &= 2 \\ -6x + 3y + 2z &= 3 \end{cases}$ |
 | Breaking up a long expression so it wraps when necessary | `<math>f(x) = \sum_{n=0}^\infty a_n x^n</math><math>= a_0 + a_1x + a_2x^2 + \cdots</math>` | $f(x) = \sum_{n=0}^\infty a_n x^n\\= a_0 + a_1x + a_2x^2 + \cdots$ |
-| Multiline equations                      | `\begin{align}f(x) & = (a+b)^2 \\& = a^2+2ab+b^2\end{align}` | $\begin{align} f(x) & = (a+b)^2 \\ & = a^2+2ab+b^2 \end{align}$ |
-|                                          | `\begin{alignat}{2}f(x) & = (a-b)^2 \\& = a^2-2ab+b^2\end{alignat}` | $\begin{alignat}{2} f(x) & = (a-b)^2 \\ & = a^2-2ab+b^2 \end{alignat}$ |
-| Multiline equations with aligment specified (left, center, right) | `\begin{array}{lcl}z        & = & a \\f(x,y,z) & = & x + y + z  \end{array}` | $\begin{array}{lcl} z        & = & a \\ f(x,y,z) & = & x + y + z   \end{array}$ |
-|                                          | `\begin{array}{lcr}z        & = & a \\f(x,y,z) & = & x + y + z     \end{array}` | $\begin{array}{lcr} z        & = & a \\ f(x,y,z) & = & x + y + z      \end{array}$ |
+| Multiline equations | `\begin{align}f(x) & = (a+b)^2 \\& = a^2+2ab+b^2\end{align}` | $\begin{align} f(x) & = (a+b)^2 \\ & = a^2+2ab+b^2 \end{align}$ |
+|  | `\begin{alignat}{2}f(x) & = (a-b)^2 \\& = a^2-2ab+b^2\end{alignat}` | $\begin{alignat}{2} f(x) & = (a-b)^2 \\ & = a^2-2ab+b^2 \end{alignat}$ |
+| Multiline equations with aligment specified (left, center, right) | `\begin{array}{lcl}z&=&a\\f(x,y,z) & = & x + y + z  \end{array}` | $\begin{array}{lcl} z& = & a\\ f(x,y,z) & = & x + y + z   \end{array}$ |
+|   | `\begin{array}{lcr}z&=&a\\f(x,y,z) & = & x + y + z\end{array}` | $\begin{array}{lcr} z& =&a\\f(x,y,z) & = & x + y + z      \end{array}$ |
 
 ### 为大表达式加括号、线条等
 
