@@ -1,4 +1,5 @@
-$wgUseTeX = true;
+` 以下文档在markdown 本地文档中生效,在github 页面不现实渲染效果.`
+
 # 介绍**如何在Markdown中书写数学公式**
 
 一般一些扩展的`Markdown`语法支持采用`LaTex`语法写数学公式，而在网页中使用`Mathjax`插件来显示数学公式。
@@ -367,5 +368,6 @@ You can use various delimiters with `\left` and `\right`: , 区别于语法调�
 
 
 -----------
-[Lex语法](https://zh.wikipedia.org/wiki/Markdown)     
+[Latex语法](https://zh.wikipedia.org/wiki/Markdown)     
+[github显示数学公式插件](https://github.com/orsharir/github-mathjax)     
 [参考网址:在markdown中输入数学公式](https://github.com/JZQT/jzqt.github.io/blob/master/2015/06/30/Markdown%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/index.html)
