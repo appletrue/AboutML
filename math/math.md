@@ -1,3 +1,4 @@
+$wgUseTeX = true;
 # 介绍**如何在Markdown中书写数学公式**
 
 一般一些扩展的`Markdown`语法支持采用`LaTex`语法写数学公式，而在网页中使用`Mathjax`插件来显示数学公式。
@@ -31,7 +32,6 @@
 
   > 质能方程
   > $$E = mc^2$$
-  >
   > $${\color{Blue}x^2}+{\color{YellowOrange}2x}-{\color{OliveGreen}1}$$
 
 ### 普通公式
@@ -42,7 +42,6 @@
 
   ```
   $$x = 100 * y + z - 10 / 33 + 10 % 3$$
-
   ```
 
 - **显示**
@@ -55,13 +54,10 @@
 与此同时，上下标是可以嵌套的。
 
 - **示例**
-
   ```
   $$x = a_{1}^n + a_{2}^n + a_{3}^n$$
   ```
-
 - **显示**
-
   > ​
   >$$x = a_{1}^n + a_{2}^n + a_{3}^n$$
   > ​
@@ -72,11 +68,8 @@
 
   ```
   $$\sideset{^1_2}{^3_4}A$$
-
   ```
-
 - **显示**
-
   > ​
   > $$\sideset{^1_2}{^3_4}A$$
   > ​
@@ -86,12 +79,9 @@
 `()`，`[]`和`|`都表示它们自己，但是`{}`因为有特殊作用因此当需要显示大括号时一般使用`\lbrace \rbrace`来表示。
 
 - **示例**
-
   ```
   $$f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$$
-
   ```
-
 - **显示**
 
   > ​
@@ -106,14 +96,11 @@
 
   ```
   $$\frac{1}{3} 与 \cfrac{1}{3}$$
-
   ```
 
 - **显示**
 
-  >
   >  $$\frac{1}{3} 与 \cfrac{1}{3}$$
-  > 
 
 ### 开方
 
@@ -124,7 +111,6 @@
   ```
   $$\sqrt[3]{X}$$
   $$\sqrt{5 - x}$$
-
   ```
 
 - **显示**
@@ -132,11 +118,10 @@
  > 
  >  $$\sqrt[3]{X}$$
  >  $$\sqrt{5 - x}$$
- >
 
 ## 希腊字母
 
-| 代码         | 大写   | 代码         | 小写   |
+| 代码       | 大写  | 代码       | 小写 |
 | ---------- | ---- | ---------- | ---- |
 | `A`        | AA   | `\alpha`   | αα   |
 | `B`        | BB   | `\beta`    | ββ   |
@@ -172,7 +157,7 @@
 | ±±   | `\pm`        |
 | ××   | `\times`     |
 | ÷÷   | `\div`       |
-| ∣∣   | `\mid`       |
+| ∣∣   | `\mid`     |
 | ∤∤   | `\nmid`      |
 | ⋅⋅   | `\cdot`      |
 | ∘∘   | `\circ`      |
@@ -234,10 +219,10 @@
 | ------ | ------------ |
 | ′′     | `\prime`     |
 | ∫∫     | `\int`       |
-| ∬∬     | `\iint`      |
-| ∭∭     | `\iiint`     |
-| ∬∬⨌    | `\iiiint`    |
-| ∮∮     | `\oint`      |
+| ∬∬     | `\iint`    |
+| ∭∭     | `\iiint`  |
+| ∬∬⨌   | `\iiiint` |
+| ∮∮     | `\oint`    |
 | limlim | `\lim`       |
 | ∞∞     | `\infty`     |
 | ∇∇     | `\nabla`     |
@@ -342,13 +327,13 @@ You can use various delimiters with `\left` and `\right`: , 区别于语法调�
 | Up, down and up-down arrows              | `\left \uparrow \frac{a}{b} \right \downarrow \quad \left \Uparrow \frac{a}{b} \right \Downarrow \quad \left \updownarrow \frac{a}{b} \right \Updownarrow` | $ \left \uparrow \frac{a}{b} \right \downarrow \quad \left \Uparrow \frac{a}{b} \right \Downarrow \quad \left \updownarrow \frac{a}{b} \right \Updownarrow$ |
 | Delimiters can be mixed, as long as `\left` and `\right` are both used | `\left [ 0,1 \right )``\left \langle \psi \right |` | $ `\left [ 0,1 \right )``\left \langle \psi \right |`$ |
 | Use `\left.` or `\right.` if you don't want a delimiter to appear: | `\left . \frac{A}{B} \right \} \to X`    | $ \left . \frac{A}{B} \right \} \to X$   |
-| Size of the delimiters                   | `\big( \Big( \bigg( \Bigg( \dots \Bigg] \bigg] \Big] \big]` | $ \big( \Big( \bigg( \Bigg( \dots \Bigg] \bigg] \Big] \big]$ |
+| Size of the delimiters    | `\big( \Big( \bigg( \Bigg( \dots \Bigg] \bigg] \Big] \big]` | $ \big( \Big( \bigg( \Bigg( \dots \Bigg] \bigg] \Big] \big]$ |
 | 大括号                                      | `\big\{ \Big\{ \bigg\{ \Bigg\{ \dots \Bigg\rangle \bigg\rangle \Big\rangle \big\rangle` | $ \big\{ \Big\{ \bigg\{ \Bigg\{ \dots \Bigg\rangle \bigg\rangle \Big\rangle \big\rangle$ |
 |                                          | ` \big| \Big| \bigg| \Bigg| \dots \Bigg\| \bigg\| \Big\| \big\|` | $ \big| \Big| \bigg| \Bigg| \dots \Bigg\| \bigg\| \Big\| \big\|$ |
 |                                          | ` \big\lfloor \Big\lfloor \bigg\lfloor \Bigg\lfloor \dots \Bigg\rceil \bigg\rceil \Big\rceil \big\rceil` | $ \big\lfloor \Big\lfloor \bigg\lfloor \Bigg\lfloor \dots \Bigg\rceil \bigg\rceil \Big\rceil \big\rceil$ |
 |                                          | ` \big\uparrow \Big\uparrow \bigg\uparrow \Bigg\uparrow \dots \Bigg\Downarrow \bigg\Downarrow \Big\Downarrow \big\Downarrow` | $ \big\uparrow \Big\uparrow \bigg\uparrow \Bigg\uparrow \dots \Bigg\Downarrow \bigg\Downarrow \Big\Downarrow \big\Downarrow$ |
-|                                          | ` \big\updownarrow \Big\updownarrow \bigg\updownarrow \Bigg\updownarrow \dots \Bigg\Updownarrow \bigg\Updownarrow \Big\Updownarrow \big\Updownarrow` | $ \big\updownarrow \Big\updownarrow \bigg\updownarrow \Bigg\updownarrow \dots \Bigg\Updownarrow \bigg\Updownarrow \Big\Updownarrow \big\Updownarrow$ |
-|                                          | ` \big / \Big / \bigg / \Bigg / \dots \Bigg\backslash \bigg\backslash \Big\backslash \big\backslash` | $ \big / \Big / \bigg / \Bigg / \dots \Bigg\backslash \bigg\backslash \Big\backslash \big\backslash$ |
+|          | ` \big\updownarrow \Big\updownarrow \bigg\updownarrow \Bigg\updownarrow \dots \Bigg\Updownarrow \bigg\Updownarrow \Big\Updownarrow \big\Updownarrow` | $ \big\updownarrow \Big\updownarrow \bigg\updownarrow \Bigg\updownarrow \dots \Bigg\Updownarrow \bigg\Updownarrow \Big\Updownarrow \big\Updownarrow$ |
+|       | ` \big / \Big / \bigg / \Bigg / \dots \Bigg\backslash \bigg\backslash \Big\backslash \big\backslash` | $ \big / \Big / \bigg / \Bigg / \dots \Bigg\backslash \bigg\backslash \Big\backslash \big\backslash$ |
 
 ## 颜色
 
