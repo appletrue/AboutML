@@ -85,33 +85,93 @@ $P(N(t)=n)=\dfrac{(\lambda t)^ne^{-\lambda t}}{n!}$
 
 在频率附近，事件的发生概率最高，然后向两边对称下降，即变得越大和越小都不太可能。每小时出生3个婴儿，这是最可能的结果，出生得越多或越少，就越不可能
 
+**泊松分布的期望**$E(X)=\sum_{k=0}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}$
+
+因为k=0时：$k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}=0$
+
+$E(X)=\sum_{k=1}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}$
+
+变换：$E(X)=\sum_{k=1}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}=\sum_{k=1}^{\infty } \frac{\lambda ^{k}e^{-\lambda }}{(k-1)!}=\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}\lambda e^{-\lambda }}{(k-1)!}=\lambda e^{-\lambda }\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}}{(k-1)!}$
+
+需要用到泰勒展开式，我们知道常用的泰勒展开式中：
+
+$e^{x}=1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+...+\frac{x^{n}}{n!}+...=\sum_{k=1}^{\infty } \frac{x ^{k-1}}{(k-1)!}$
+
+因此，泊松分布的期望为: $E(X)=\lambda e^{-\lambda }\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}}{(k-1)!}=\lambda e^{-\lambda }e^{\lambda }=\lambda$
+
+**方差D(X)**，先求出$E(X^2)$: 
+
+$E(X^2)=\sum_{k=0}^{\infty }k^2 \cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}=\lambda e^{-\lambda} \sum_{k=1}^{\infty } \frac{k \lambda ^{k-1}}{(k-1)!}=\lambda e^{-\lambda} \sum_{k=1}^{\infty } \frac{(k-1+1) \lambda ^{k-1}}{(k-1)!}$
+
+$=\lambda e^{-\lambda} (\sum_{m=0}^{\infty } \frac{m \cdot \lambda ^{m}}{m!}+\sum_{m=0}^{\infty } \frac{ \lambda ^{m}}{m!}) (m=k-1)$
+
+$=\lambda e^{-\lambda} ( \lambda \cdot \sum_{m=1}^{\infty } \frac{\lambda ^{m-1}}{(m-1)!}+\sum_{m=0}^{\infty } \frac{ \lambda ^{m}}{m!})$
+
+$=\lambda e^{-\lambda}(\lambda e^{\lambda}+e^\lambda)=\lambda(\lambda+1)$
+
+所以:$D(X)=E(X^2)-(E(X))^2=\lambda(\lambda+1)-\lambda^2=\lambda$
+
+泊松分布的期望和方差为: E(X)=λ,   D(X)=λ
+
 ------
 
 连续型随机变量概率密度
-
-- 均匀分布
 - 指数分布
+- 均匀分布
 - 正态分布
 
 ------
-
-均匀分布
-
-
 
 ### 指数分布
 
 **指数分布是事件的时间间隔的概率。**如网站访问的时间间隔,婴儿出生的时间间隔等
 
+指数分布有如下的适用条件： 
+
+1. x是两个事件发生之间的时间间隔，并且x>0; 
+2. 事件之间是相互独立的； 
+3. 事件发生的频率是稳定的； 
+4. 两个事件不能发生在同一瞬间。
+
+这几个条件实质上也是使用泊松分布的前提条件。如果满足上述条件，则x是一个指数随机变量，x的分布是一个指数分布。如果不满足上述条件，那么需要使用Weibull分布或者gamma分布。
+
 指数分布的公式可以从泊松分布推断出来。如果下一个婴儿要间隔时间 t ，就等同于 t 之内没有任何婴儿出生
 
-$P(X>t)=P(N(t)=0)=\dfrac{(\lambda t)^0 e^{-\lambda t}}{0!}=e^{-\lambda t}$
+$P(X>t)=P(N(t)=0)=\dfrac{(\lambda t)^0 e^{-\lambda t}}{0!}=e^{-\lambda t}$（如果x<=0，则f(x)=0，e则是自然对数的底数）
 
 反过来，事件在时间 t 之内发生的概率，就是1减去上面的值。
 
-$P(X≤t)=1-P(X>t)=1-e^{-\lambda t}$
+$P(X≤t)=1-P(X>t)=1-e^{-\lambda t}$ 就变成了**时间间隔t在参数λ下的分布函数**
+
+根据概率论知识，分布函数是概率密度函数从负无穷到正无穷上的积分。对上述的分布函数进行求导，得$f(t)=\lambda e^{-\lambda t}$ ,即从泊松分布推导出指数分布的概率密度函数.
+
+指数分布只有一个参数，“λ”，λ是事件发生的频率，在不同的应用场景中可能有不同名称，如事件频率，到达频率，死亡率，故障率，转变率等。
+
+#### 期望和方差推导:
+
+首先，指数分布属于连续型随机分布，因此，其期望E(X)为
+
+$E(X)=\int_{-\infty }^{\infty }|x|f(x)dx=\int_{0}^{\infty }xf(x)dx=\int_{0}^{\infty }x\cdot\lambda e^{-\lambda x}dx=\frac {1} {\lambda}\int_{0}^{\infty }\lambda xe^{-\lambda x}d\lambda x$
+
+令u=λx，则： 
+
+$E(X)=\frac {1} {\lambda}\int_{0}^{\infty }ue^{-u}du=\frac {1} {\lambda}[(-e^{-u}-ue^{-u})|(\infty,0)]=\frac {1} {\lambda}$
+
+对于**指数分布的方差D(X)**：$D(X)=E(X^2)-(E(X))^2$
+
+$E(X^2)=\int_{-\infty }^{\infty }|x^2|f(x)dx=\int_{0}^{\infty }x^2f(x)dx=\int_{0}^{\infty }x^2\cdot\lambda e^{-\lambda x}dx$
+
+$E(X^2)=\frac {1} {\lambda^2}\int_{0}^{\infty }\lambda x \lambda xe^{-\lambda x}d\lambda x$
+
+令u=λx，则：
+
+$E(X^2)=\frac {1} {\lambda^2}\int_{0}^{\infty }u^2e^{-u}du=\frac {1} {\lambda^2}[(-2e^{-u}-2ue^{-u}-u^2e^{-u})|(\infty,0)]=\frac {1} {\lambda^2}\cdot 2=\frac {2} {\lambda^2}$
+
+所以:$D(X)=E(X^2)-(E(X))^2=\frac {2} {\lambda^2}-(\frac {1} {\lambda})^2=\frac {1} {\lambda^2}$
 
 指数分布的图形,体现随着间隔时间变长，事件的发生概率急剧下降，呈指数式衰减。想一想，如果每小时平均出生3个婴儿，上面已经算过了，下一个婴儿间隔2小时才出生的概率是0.25%，那么间隔3小时、间隔4小时的概率，是不是更接近于0？
+
+### 均匀分布
 
 ### 正态分布
 
@@ -123,7 +183,7 @@ $P(X≤t)=1-P(X>t)=1-e^{-\lambda t}$
  概率密度函数（PDF）
 
 $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}$,结果可表示为 X~$N(\mu,\sigma^2)$
-
+![normal-dis](https://github.com/appletrue/NoteML/blob/master/PICs/normal-dis.jpg)
 - 可以看出期望 μ 代表了正态分布的偏移量（位置）；方差$σ^2$代表了幅度
 - 当μ=1，σ=0就是**标准正态分布（standard normal distribution）**,表示为N(0,1) ,$\dfrac{x-\mu}{\sigma}$~(0,1)
 
@@ -133,4 +193,70 @@ $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}
 - 证明：由于每次测量误差都和其余测量误差的大小无关，因此是独立条件，所以 ∑Ni=1xi就是独立同分布的，乘以1N并不影响，减去x∗只改变了偏移量也不影响它的性质，因此测量误差服从独立同分布
 - **在误差服从正态分布的情况下，测量量仍旧可以为其他分布**
 
+多元正态分布
 
+回顾**概念I： 随机向量的期望**
+
+- 定义：本质上还是对N个数取平均的期望求法，但是这里是以向量表示出来
+- 公式： 
+
+设X=$X =\left [ \begin{array}{lr} x1 \\ x2 \\...\\x_{n} \end{array} \right ]$是n维随机变量，那么它的期望（均值）为 $E(x) =\left [ \begin{array}{lr} E(x1) \\ E(x2) \\...\\E(x_{n}) \end{array} \right ]$
+
+设X=$X =\left [ \begin{matrix} x_{11} & x_{12} & ... & x_{1q} \\ x_{21} & x_{22} & ... & x_{2q} \\... & ... & ... &...\\x_{p1} & x_{p2} & ... & x_{pq}\end{matrix} \right ]$是p∗q阶随机矩阵，那么该随机矩阵的期望为$E(X) =\left [ \begin{matrix}  E(x_{11})& E(x_{12} )& ... & E(x_{1q}) \\ E(x_{21)} & E(x_{22}) & ... & E(x_{2q}) \\... & ... & ... &...\\E(x_{p1}) & E(x_{p2}) & ... & E(x_{pq})\end{matrix} \right ]$
+
+**概念II： 协方差**
+
+定义：描述两个随机变量综合偏离程度，其中方差是协方差的特殊情况，即两个随机变量值相同
+
+公式：cov(X,Y)=E[(X−E[X])(Y−E[Y])]，可见X,Y各自的偏移相乘后再求期望即协方差
+
+应用：思考联合分布率（X,Y），对于随机变量X,Y大概可以分为三种情况：
+
+- 当X,Y的偏移量同时满足增大或者减小，即cov(X,Y)>0，呈正相关，这时它们的联合分布呈现一个X增大,Y增大趋势的椭圆 
+- 当X,Y的偏移量满足X增大Y减小或X减小Y增大，即cov(X,Y)<0，呈正相关，这时它们的联合分布呈现一个X增大,Y减小趋势的椭圆 
+- 当X，Y的偏移量为0的时候，即cov(X,Y)=0，即不相关，这时候他们的联合分布为一个圆
+
+**概念III：协方差矩阵 **
+
+协方差矩阵的每个元素是各个向量元素之间的协方差，而协方差只能处理二维问题，所以计算多维问题时候，即使用协方差矩阵。而协方差矩阵对角线上衡量的是各个纬度的协方差，当X=Y的时候，就是各个维度的方差，即某一维上的偏移程度。
+
+$Cov(X,Y) =\left [ \begin{matrix}  Cov(x_{1}, y_{1})& ... & Cov(x_{1},y_{q})) \\ \vdots   & \ddots &\vdots  \\Cov(x_{p},y_{1})  & ... & Cov(x_{p},y_{q})\end{matrix} \right ]$
+
+当X=Y的时候$Cov(X,X) =\left [ \begin{matrix}  D(x_{1})& ... & Cov(x_{1},x_{q})) \\ \vdots   & \ddots &\vdots  \\Cov(x_{p},x_{1})  & ... & D(x_{p})\end{matrix} \right ]$
+
+**概念IV：正定矩阵**
+
+设M是n阶方阵，如果对于任何非零矩阵Z，都有$Z^TMZ>0$，则M为正定矩阵
+
+常用的判定性质是利用特征值，令M−λE=0 ， 如果λ>0，则M为正定矩阵
+
+#### 多元正态分布
+
+分布律:$N(x|\mu , \Sigma) = \frac{1}{(2 \pi)^{D/2}} \frac{1}{(\left |\Sigma  \right |)^{1/2}}\exp \left \{ -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu) \right \}$
+
+二元正态分布
+
+假设X,Y二人同时对小球半径进行测量，各自测100组，求误差的联合概率分布.
+
+求解：二元正态分布的本质是两个随机变量都符合正态分布又测量误差是服从正态分布的，那么他们的联合分布就是二维正态分布因此求解P(X,Y)=P(X)∗P(Y)，忽略掉归一化系数得到公式,
+
+$\exp (-\frac{(x-\mu_{1})^{2}}{2\sigma_{1}^{2}}-\frac{(y-\mu_{2})^{2}}{2\sigma_{2}^{2}})$(圆锥曲线知识)
+
+为了加深理解，所以进行和分布律之间的化简：我们将$(x−μ_1)$看为$X_1$，$(y−μ_2)$看作$X_2$，因此原公式变为$-(\frac{1}{2\sigma_{1}^{2}}X_{1}^{2}+\frac{1}{2\sigma_{2}^{2}}X_{2}^{2})$,，因为我们多元正态分布的分布律就是一个正定二次型，二次型矩阵定义：$X^TAX$，所以X就是$[X_1,X_2]$，而系数和分布律里的12化简了。
+
+扩展：根据分布律我们知道，μ代表了该分布图像的中心偏置,Σ决定了分布的形状。 
+
+- 当Σ为单位矩阵的时候，即σ1=σ2=1，椭圆的长短半径都是1，那么就是一个圆，复合成三维即球体。
+- 当Σ为对角矩阵的时候，是椭球或椭圆了
+- 当Σ为非对角矩阵的时候，就是一个带偏置，旋转后的椭球体或者球体
+
+为什么要求Σ要求正定对称矩阵： 
+
+为何要正定：假设$\Sigma =\left [ \begin{matrix} -1 &  \\  & 1 \end{matrix} \right ]$， 我们带入到分布律中，根据矩阵乘法得到$−X^2+Y^2$，那么这样的曲线是不可描述的，有可能正相关有可能负相关，最终的曲线就不是正态分布了。
+
+为何要对称：做个旋转矩阵，假设Σ为对角阵，T为旋转矩阵，$(Tx)^{T}\Sigma^{-1}(Tx)=x^{T}(T^{T}\Sigma^{-1}T)x$,得到$T^{T}\Sigma^{-1}T$还是个对角矩阵！
+
+------参考网址-------
+[泊松分布的期望和方差及其推导](http://blog.csdn.net/saltriver/article/details/52969014)
+
+[二项分布均值方差及其推导](http://blog.csdn.net/saltriver/article/details/52600094)
