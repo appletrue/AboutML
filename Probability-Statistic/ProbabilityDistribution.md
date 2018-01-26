@@ -85,15 +85,18 @@ $P(N(t)=n)=\dfrac{(\lambda t)^ne^{-\lambda t}}{n!}$
 
 在频率附近，事件的发生概率最高，然后向两边对称下降，即变得越大和越小都不太可能。每小时出生3个婴儿，这是最可能的结果，出生得越多或越少，就越不可能
 
-**泊松分布的期望**$E(X)=\sum_{k=0}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}$
+**泊松分布的期望**
+
+$E(X)=\sum_{k=0}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}$
 
 因为k=0时：$k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}=0$
 
 $E(X)=\sum_{k=1}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}$
 
-变换：$E(X)=\sum_{k=1}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}=\sum_{k=1}^{\infty } \frac{\lambda ^{k}e^{-\lambda }}{(k-1)!}=\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}\lambda e^{-\lambda }}{(k-1)!}=\lambda e^{-\lambda }\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}}{(k-1)!}$
+变换：
+$E(X)=\sum_{k=1}^{\infty }k\cdot \frac{\lambda ^{k}e^{-\lambda }}{k!}=\sum_{k=1}^{\infty } \frac{\lambda ^{k}e^{-\lambda }}{(k-1)!}=\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}\lambda e^{-\lambda }}{(k-1)!}=\lambda e^{-\lambda }\sum_{k=1}^{\infty } \frac{\lambda ^{k-1}}{(k-1)!}$
 
-需要用到泰勒展开式，我们知道常用的泰勒展开式中：
+需要用到泰勒展开式，常用的泰勒展开式中：
 
 $e^{x}=1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+...+\frac{x^{n}}{n!}+...=\sum_{k=1}^{\infty } \frac{x ^{k-1}}{(k-1)!}$
 
@@ -124,7 +127,7 @@ $=\lambda e^{-\lambda}(\lambda e^{\lambda}+e^\lambda)=\lambda(\lambda+1)$
 
 ### 指数分布
 
-**指数分布是事件的时间间隔的概率。**如网站访问的时间间隔,婴儿出生的时间间隔等
+**指数分布是事件的时间间隔的概率**。如网站访问的时间间隔,婴儿出生的时间间隔等
 
 指数分布有如下的适用条件： 
 
@@ -173,6 +176,25 @@ $E(X^2)=\frac {1} {\lambda^2}\int_{0}^{\infty }u^2e^{-u}du=\frac {1} {\lambda^2}
 
 ### 均匀分布
 
+设连续随机变量X的一切可能值充满一个有限区间[a,b],且在该区间内任意 点概率的密度相同,即密度函数f(x)在区间[a,b]上为常量,称此分布为均匀分布 ,记作U(a,b)
+
+当X在[a,b]上服从分布U(a,b)时,记为X~U(a,b).
+
+在区间[a,b]上服从均匀分布的随机变量X,落在区间[a,b]中任意等长度的子区间内的可能性是相同的.
+
+1.概率密度
+
+在区间[a,b]上概率密度f(x)=C(常数),于是 
+定义积分操作为inte( a , b )[]  a,b为上下限
+
+$inte(a,b)[C]dx = C*(b-a) = 1 => C = 1/(b-a)$
+
+又因为随机变量X不可能取得区间[a,b]外的值,所以在[a,b]外,概率密度为0,于是概率密度为
+
+$f(x) = { 1/(b-1) , a <= x <= b ;  0 , else }$
+
+2.分布函数(就是到-oox的密度函数的积分
+
 ### 正态分布
 
 来源：中心极限定理 
@@ -183,7 +205,9 @@ $E(X^2)=\frac {1} {\lambda^2}\int_{0}^{\infty }u^2e^{-u}du=\frac {1} {\lambda^2}
  概率密度函数（PDF）
 
 $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}$,结果可表示为 X~$N(\mu,\sigma^2)$
+
 ![normal-dis](https://github.com/appletrue/NoteML/blob/master/PICs/normal-dis.jpg)
+
 - 可以看出期望 μ 代表了正态分布的偏移量（位置）；方差$σ^2$代表了幅度
 - 当μ=1，σ=0就是**标准正态分布（standard normal distribution）**,表示为N(0,1) ,$\dfrac{x-\mu}{\sigma}$~(0,1)
 
@@ -193,9 +217,9 @@ $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}
 - 证明：由于每次测量误差都和其余测量误差的大小无关，因此是独立条件，所以 ∑Ni=1xi就是独立同分布的，乘以1N并不影响，减去x∗只改变了偏移量也不影响它的性质，因此测量误差服从独立同分布
 - **在误差服从正态分布的情况下，测量量仍旧可以为其他分布**
 
-多元正态分布
+#### 回顾
 
-回顾**概念I： 随机向量的期望**
+**概念I： 随机向量的期望**
 
 - 定义：本质上还是对N个数取平均的期望求法，但是这里是以向量表示出来
 - 公式： 
@@ -216,7 +240,7 @@ $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}
 - 当X,Y的偏移量满足X增大Y减小或X减小Y增大，即cov(X,Y)<0，呈正相关，这时它们的联合分布呈现一个X增大,Y减小趋势的椭圆 
 - 当X，Y的偏移量为0的时候，即cov(X,Y)=0，即不相关，这时候他们的联合分布为一个圆
 
-**概念III：协方差矩阵 **
+**概念III：协方差矩阵**
 
 协方差矩阵的每个元素是各个向量元素之间的协方差，而协方差只能处理二维问题，所以计算多维问题时候，即使用协方差矩阵。而协方差矩阵对角线上衡量的是各个纬度的协方差，当X=Y的时候，就是各个维度的方差，即某一维上的偏移程度。
 
@@ -230,11 +254,11 @@ $Cov(X,Y) =\left [ \begin{matrix}  Cov(x_{1}, y_{1})& ... & Cov(x_{1},y_{q})) \\
 
 常用的判定性质是利用特征值，令M−λE=0 ， 如果λ>0，则M为正定矩阵
 
-#### 多元正态分布
+### 扩展:多元正态分布
 
 分布律:$N(x|\mu , \Sigma) = \frac{1}{(2 \pi)^{D/2}} \frac{1}{(\left |\Sigma  \right |)^{1/2}}\exp \left \{ -\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu) \right \}$
 
-二元正态分布
+#### 二元正态分布
 
 假设X,Y二人同时对小球半径进行测量，各自测100组，求误差的联合概率分布.
 
