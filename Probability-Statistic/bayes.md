@@ -1,1 +1,0 @@
-bayesyeyeysyn,.d,f.d
