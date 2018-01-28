@@ -224,9 +224,11 @@ $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}
 - 定义：本质上还是对N个数取平均的期望求法，但是这里是以向量表示出来
 - 公式： 
 
-设X=$X =\left [ \begin{array}{lr} x1 \\ x2 \\...\\x_{n} \end{array} \right ]$是n维随机变量，那么它的期望（均值）为 $E(x) =\left [ \begin{array}{lr} E(x1) \\ E(x2) \\...\\E(x_{n}) \end{array} \right ]$
+设$X =\left [ \begin{array}{lr} x1 \\ x2 \\...\\x_{n} \end{array} \right ]$是n维随机变量，那么它的期望（均值）为 $E(x) =\left [ \begin{array}{lr} E(x1) \\ E(x2) \\...\\E(x_{n}) \end{array} \right ]$
 
-设X=$X =\left [ \begin{matrix} x_{11} & x_{12} & ... & x_{1q} \\ x_{21} & x_{22} & ... & x_{2q} \\... & ... & ... &...\\x_{p1} & x_{p2} & ... & x_{pq}\end{matrix} \right ]$是p∗q阶随机矩阵，那么该随机矩阵的期望为$E(X) =\left [ \begin{matrix}  E(x_{11})& E(x_{12} )& ... & E(x_{1q}) \\ E(x_{21)} & E(x_{22}) & ... & E(x_{2q}) \\... & ... & ... &...\\E(x_{p1}) & E(x_{p2}) & ... & E(x_{pq})\end{matrix} \right ]$
+设$X =\left [ \begin{matrix} x_{11} & x_{12} & ... & x_{1q} \\ x_{21} & x_{22} & ... & x_{2q} \\... & ... & ... &...\\x_{p1} & x_{p2} & ... & x_{pq}\end{matrix} \right ]$是p∗q阶随机矩阵，
+
+那么该随机矩阵的期望为$E(X) =\left { \begin{matrix}  E(x_{11})& E(x_{12} )& ... & E(x_{1q}) \\ E(x_{21)} & E(x_{22}) & ... & E(x_{2q}) \\... & ... & ... &...\\E(x_{p1}) & E(x_{p2}) & ... & E(x_{pq})\end{matrix} \right ]$
 
 **概念II： 协方差**
 
