@@ -33,7 +33,7 @@
 
   > 质能方程
   > $$E = mc^2$$
-  > $${\color{Blue}x^2}+{\color{YellowOrange}2x}-{\color{OliveGreen}1}$$
+  > $${\color{Blue}x^2}+{\color{Yellow}2x}-{\color{Green}1}$$
 
 ### 普通公式
 
