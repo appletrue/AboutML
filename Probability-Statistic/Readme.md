@@ -39,3 +39,12 @@ http://blog.csdn.net/guzhenping/article/details/43491835
 http://blog.csdn.net/z_x_1996/article/details/70176819
 http://blog.csdn.net/zengxiantao1994/article/details/72787849
 http://blog.csdn.net/raintungl/article/details/78188182
+
+
+https://xiangxing98.github.io/R_Learning/R_distribution_in_r_and_its_application.nb.html
+
+http://blog.csdn.net/v_JULY_v/article/details/41209515
+
+http://rancho.wang/category/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%BB%9F%E8%AE%A1%E5%AD%A6/
+
+
