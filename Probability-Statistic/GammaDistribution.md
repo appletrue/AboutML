@@ -20,11 +20,11 @@ Gamma函数$\Gamma(x) = \int_0^{\infty}t^{x-1}e^{-t}dt$，骨骼清奇，长相�
 >
 > 于是用这个无穷乘积的方式可以把n!的定义延拓到实数集合。例如，取 n=2.5 m足够大，基于上式就可以近似计算出 $2.5!$
 
-> 欧拉也偶然的发现 n! 可以用如下的一个无穷乘积表达$`\begin{equation} \label{euler-series} \Bigl[\Bigl(\frac{2}{1}\Bigr)^n\frac{1}{n+1}\Bigr] \Bigl[\Bigl(\frac{3}{2}\Bigr)^n\frac{2}{n+2}\Bigr] \Bigl[\Bigl(\frac{4}{3}\Bigr)^n\frac{3}{n+3}\Bigr] \cdots = n! \quad  (*) \end{equation}`$
+> 欧拉也偶然的发现 n! 可以用如下的一个无穷乘积表达$\begin{equation} \label{euler-series} \Bigl[\Bigl(\frac{2}{1}\Bigr)^n\frac{1}{n+1}\Bigr] \Bigl[\Bigl(\frac{3}{2}\Bigr)^n\frac{2}{n+2}\Bigr] \Bigl[\Bigl(\frac{4}{3}\Bigr)^n\frac{3}{n+3}\Bigr] \cdots = n! \quad  (*) \end{equation}$
 >
 > 用极限形式，这个式子整理后可以写为
 >
-> $`\begin{equation} \label{euler-series2} \lim_{m \rightarrow \infty} \frac{1\cdot 2\cdot 3 \cdots m}{(1+n)(2+n)\cdots (m+n)}(m+1)^{n} = n! \quad  (**) \end{equation}`$
+> $\begin{equation} \label{euler-series2} \lim_{m \rightarrow \infty} \frac{1\cdot 2\cdot 3 \cdots m}{(1+n)(2+n)\cdots (m+n)}(m+1)^{n} = n! \quad  (**) \end{equation}$
 >
 > 左边可以整理为
 >
