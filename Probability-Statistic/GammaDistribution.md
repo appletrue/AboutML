@@ -161,7 +161,7 @@ $f(x)= \begin{cases} \displaystyle\frac {x^{\alpha-1} e^{x/\beta}} {\beta^\alpha
 
 β 型概率分布
 
-$f(x)= \frac {\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1}(1-x)^{\beta-1}, & 0 \leq x \leq 1;\;\alpha > 0, \beta > 0 \\\ 0, & others$ 
+$f(x)= \begin{cases} \displaystyle\frac {\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1}(1-x)^{\beta-1}, & 0 \leq x \leq 1;\;\alpha > 0, \beta > 0 \\\ 0, & others \end{cases} \quad (**)$
 
 
 ----参考网址--------
@@ -170,5 +170,5 @@ $f(x)= \frac {\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1}(1-
 
 [http://www.flickering.cn](http://www.flickering.cn/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/2014/07/%E7%A5%9E%E5%A5%87%E7%9A%84%E4%BC%BD%E7%8E%9B%E5%87%BD%E6%95%B0%E4%B8%8B/)
 
-[概率与统计三个重要函数](http://www.52caml.com/stats/beta-gamma-dirichlet-function/)
+[概率与统计三个重要函数详细推导](http://www.52caml.com/stats/beta-gamma-dirichlet-function/)
 
