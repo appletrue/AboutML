@@ -30,19 +30,19 @@ $Gamma(\lambda|\alpha=k+1) = \frac{\lambda^ke^{-\lambda}}{\Gamma(k+1)}= \frac{\l
 
 这种数学上的一致性是偶然的吗？ 事实上，从泊松分布出发，可以利用一个简单的概率物理模型对伽玛分布的密度函数给出清晰的解释。
 
-泊松分布可以用于描述一段时间内事件发生次数的统计性质，譬如接到的电话的次数。假设我们关心的不是一段有限的时间，而是 (0,∞) 整个时间轴上接到电话的统计性质，应该如何来描述呢？我们可以假设接到的电话满足如下性质
+泊松分布可以用于描述一段时间内事件发生次数的统计性质，譬如接到的电话的次数。假设我们关心的不是一段有限的时间，而是 (0,∞) 整个时间轴上接到电话的统计性质，应该如何来描述呢？我们可以假设接到的电话满足如下性质:
 
-1.  概率在时间轴是独立均匀分布的，即每个等长的时间区间上是否接到电话是独立的，并且概率分布一样；每一个长度为h的充分小的时间片上接到一个电话的概率正比于时间片的长度；
-2.  每一个充分小时间片上最多只能接到一个电话；
-3.  平均而言，假设每个长度为1的单位时间片上接到电话个数是1。
+- 1. 概率在时间轴是独立均匀分布的，即每个等长的时间区间上是否接到电话是独立的，并且概率分布一样；每一个长度为h的充分小的时间片上接到一个电话的概率正比于时间片的长度；
+- 2. 每一个充分小时间片上最多只能接到一个电话；
+- 3. 平均而言，假设每个长度为1的单位时间片上接到电话个数是1。
 
 如果我们考察 [0,λ] 这个时间区间，那么平均而言，这个长度为 λ 的时间片上应该接到 λ 个电话，把这个时间区间分成 n 个独立的小片，那么每个时间片上接到一个电话的概率恰好是 p=λ/n。当n 足够大的时候，每个时间片上只能是接到一个电话或者没有接到电话，恰好对应于成功概率为p 的一个贝努利实验，于是n 个时间片对应于n 个独立的贝努利实验，所以 [0,λ]这个时间区间上接到的电话总数X 应该符合二项分布
 
-$p(X=k) = \binom{n}{k} p^k(1-p)^{n-k} .$
+$p(X=k)=\binom{n}{k} p^k(1-p)^{n-k}$
 
 由于 np=λ, 于是 n 趋向于无穷的时候，电话个数X将满足参数为λ 的泊松分布
 
-$p(X=k) = \frac{\lambda^k e^{-\lambda}}{k!} .$
+$p(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}$
 
 熟悉随机过程理论的读者马上会发现以上模型实际上是参数为1 的泊松过程。 我们关心的问题是：什么时候会接到第k+1 个电话？或者说接到第k+1 个电话的时间点$ Y_k+1$ 会是什么概率分布？ 形式化的描述就是如何计算如下的概率？
 
@@ -53,11 +53,11 @@ $P(\lambda < Y_{k+1} \le \lambda + d\lambda) = ?$
 1.  区间 (λ,λ+dλ] 内接到一个电话，这个概率是 dλ
 2.  区间 [0,λ] 内接到了前k 个电话，这个概率是 
 
-$p(X=k) = \frac{\lambda^k e^{-\lambda}}{k!} .$
+$p(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}$
 
 于是所求的概率是以上两个事件概率相乘，即
 
-$P(\lambda < Y_{k+1} \le \lambda + d\lambda) = p(X=k) \cdot d \lambda .$
+$P(\lambda < Y_{k+1} \le \lambda + d\lambda) = p(X=k) \cdot d \lambda$
 
 由于第k+1 个电话必然出现在时间轴上某处，所以把时间轴所有无穷小区间上的概率累加起来，正好对应于必然事件的概率1，所以有
 
@@ -73,11 +73,13 @@ $k! = \int_0^\infty \lambda^k e^{-\lambda} d \lambda$
 
 如果我们把伽玛函数和eλ的泰勒展开式对照写成如下形式:
 
-$\begin{align} e^\lambda & = \sum_{k=0}^{\infty} {\lambda^k \over k!}--------- (3)\\ k! & = \int_0^{\infty} {\lambda^k \over e^\lambda}\ d\lambda. -------(4)\end{align}$
+$ e^\lambda & = \sum_{k=0}^{\infty} {\lambda^k \over k!}$--------- (3)
+
+$ k! & = \int_0^{\infty} {\lambda^k \over e^\lambda}\ d\lambda} $-------(4)
 
 我们发现这两个式子形式上具有对偶关系。由于 ∑ 和∫ 都表示求和， 几乎可以认为从第一个式子只是把 $e^λ$ 和 k! 交换一下就得到了第二个式子。 这两个式子之间有更多的内在联系吗？事实上有如下一个奇妙的等式成立
 
-$`\begin{equation} \label{gamma-e-taylor} \frac{1}{k!} \int_0^\lambda \frac{\lambda^k}{e^\lambda} d\lambda + \frac{1}{e^\lambda} \sum_{n=0}^k \frac{\lambda^n}{n!} = 1 \end{equation}`$(5)
+$\begin{equation} \label{gamma-e-taylor} \frac{1}{k!} \int_0^\lambda \frac{\lambda^k}{e^\lambda} d\lambda + \frac{1}{e^\lambda} \sum_{n=0}^k \frac{\lambda^n}{n!} = 1 \end{equation}$(5)
 
 用上面描述的泊松过程的物理模型，可以很容易的证明这个等式。我们把数轴分成 (0,λ] 和 (λ,∞) 这两个区间，考察第k+1 个电话接到时间 $Y_{k+1}$ 分别落在这两个区间的概率，当然有
 
@@ -91,7 +93,7 @@ $P(Y_{k+1} \le \lambda) = \int_0^\lambda \frac{\lambda^k e^{-\lambda}}{k!} d \la
 
 $P(Y_{k+1} > \lambda) = \sum_{n=0}^k \frac{\lambda^n e^{-\lambda} }{n!}$ 
 
-得到 $`\begin{equation} \label{poisson-gamma-dual} \int_0^\lambda \frac{\lambda^k e^{-\lambda}}{k!}d\lambda + \sum_{n=0}^k \frac{\lambda^n e^{-\lambda}}{n!} = 1 \end{equation}`$ (6)这个式子俗称泊松-伽玛对偶
+得到 $\begin{equation} \label{poisson-gamma-dual} \int_0^\lambda \frac{\lambda^k e^{-\lambda}}{k!}d\lambda + \sum_{n=0}^k \frac{\lambda^n e^{-\lambda}}{n!} = 1 \end{equation}$ (6)这个式子俗称泊松-伽玛对偶
 
 由于泊松分布可以看做是二项分布的极限分布，所以我们也可以从二项分布的角度对伽马分布进行解释。由于
 
@@ -99,11 +101,11 @@ $e^{-\lambda} = \lim_{n\rightarrow \infty} (1- \frac{\lambda}{n}) ^n$
 
 所以伽马分布的概率密度可以重写为
 
-$`\begin{align*} \frac{\lambda^k e^{-\lambda}}{k!} & = \lim_{n\rightarrow \infty} \frac{\lambda^k (1-\frac{\lambda}{n}) ^n}{k!} \\ & = \lim_{n\rightarrow \infty} \frac{ n! n^k (\frac{\lambda}{n})^k (1-\frac{\lambda}{n}) ^n}{k! \cdot n!} \\ & = \lim_{n\rightarrow \infty} \frac{(n+k)!}{k!\cdot n!} (\frac{\lambda}{n})^k (1-\frac{\lambda}{n}) ^n \\ & = \lim_{n\rightarrow \infty} \binom{n+k}{k} (\frac{\lambda}{n})^k (1-\frac{\lambda}{n}) ^n \end{align*}`$
+$\begin{align*} \frac{\lambda^k e^{-\lambda}}{k!} & = \lim_{n\rightarrow \infty} \frac{\lambda^k (1-\frac{\lambda}{n}) ^n}{k!} \\ & = \lim_{n\rightarrow \infty} \frac{ n! n^k (\frac{\lambda}{n})^k (1-\frac{\lambda}{n}) ^n}{k! \cdot n!} \\ & = \lim_{n\rightarrow \infty} \frac{(n+k)!}{k!\cdot n!} (\frac{\lambda}{n})^k (1-\frac{\lambda}{n}) ^n \\ & = \lim_{n\rightarrow \infty} \binom{n+k}{k} (\frac{\lambda}{n})^k (1-\frac{\lambda}{n}) ^n \end{align*}$
 
 显然上式具有明确的二项分布的物理含义。事实上，二项分布和贝塔分布之间也存在完全类似(6) 的一个等式：
 
-$`\begin{equation} \label{binomial-beta-dual} \frac{n!}{k!(n-k-1)!} \int_0^p t^k(1-t)^{n-k-1} dt + \sum_{v=0}^k \binom{n}{v} p^v(1-p)^{n-v} = 1 \end{equation}`$ (7)
+$\begin{equation} \label{binomial-beta-dual} \frac{n!}{k!(n-k-1)!} \int_0^p t^k(1-t)^{n-k-1} dt + \sum_{v=0}^k \binom{n}{v} p^v(1-p)^{n-v} = 1 \end{equation}$ (7)
 
 如果我们知道n→∞时上式中二项分布的极限是泊松分布，而贝塔分布的极限是伽玛分布，那么就很容易理解(6) 其实可以看做是 (7)的极限形式
 
@@ -126,7 +128,7 @@ $X_1, X_2, X_3, …, X_n \stackrel{i.i.d.}{\sim}Uniform(0,1)$
 
 由于这 n 个变量都是独立同分布,服从均匀分布, 那么我们会得到:
 
-$`\begin{align*} f_{X_{(k)}}(x) &= \lim_{\Delta x \rightarrow 0} \frac{n\times\Delta x\times C_{(n-1)}^{(k-1)}\times x^{k-1}\times(1-x-\Delta x)^{n-k}}{\Delta x}\\ \\ &=nC_{n-1}^{k-1}x^{k-1}(1-x)^{n-k}\\ \\ &=\frac{\Gamma(n+1)}{\Gamma(k) \Gamma(n-k+1)}x^{k-1}(1-x)^{n-k} \end{align*}`$
+$\begin{align*} f_{X_{(k)}}(x) &= \lim_{\Delta x \rightarrow 0} \frac{n\times\Delta x\times C_{(n-1)}^{(k-1)}\times x^{k-1}\times(1-x-\Delta x)^{n-k}}{\Delta x}\\ \\ &=nC_{n-1}^{k-1}x^{k-1}(1-x)^{n-k}\\ \\ &=\frac{\Gamma(n+1)}{\Gamma(k) \Gamma(n-k+1)}x^{k-1}(1-x)^{n-k} \end{align*}$
 
 令 α=k,β=n−k−1 ,于是我们可以得到了一般意义上的Beta分布.
 
@@ -142,7 +144,9 @@ $\begin{equation} f(x) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha) \Gamma(\beta
 
 对于某个分布，当我们对参数没有任何先验知识时，可以认为参数满足一个均匀分布（熵最大，风险最小原则）。或者我们可以把似然函数的共轭先验分布作为参数的分布。这样做有两点好处，第一由于先验是似然的共轭先验分布，所以后验和先验是共轭分布，符合直观的理解；第二对于得到的后验分布，可以作为下一轮的先验分布，形成对参数的估计链。
 
-推广上述:如果有另外 m 个随机变量 $Y_1, Y_2, Y_3, …, Y_m \stackrel{i.i.d.}{\sim}Uniform(0,1)$， 其中有 m1 个比 X(k)小, 有 m2 个比 X(k) 大 (m1+m2=m), 那么求现在 X(k)的分布是什么?
+===推广上述===:
+
+如果有另外 m 个随机变量 $Y_1, Y_2, Y_3, …, Y_m \stackrel{i.i.d.}{\sim}Uniform(0,1)$， 其中有 m1 个比 X(k)小, 有 m2 个比 X(k) 大 (m1+m2=m), 那么求现在 X(k)的分布是什么?
 
 现在的问题等价于：$X_1, X_2, X_3, …, X_n, Y_1, Y_2, Y_3, …, Y_m \stackrel{i.i.d.}{\sim}Uniform(0,1)$
 
@@ -155,7 +159,6 @@ $\begin{equation} f(x) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha) \Gamma(\beta
 观测的数据是 $Y_i∼B(n,p)$, 其中$ p=X_(k)$, 而观测到的数据有$ m_1/(m_1+m_2)$ 的几率落入第一个区间，$ m_2/(m_1+m_2)$ 的几率落入第二个区间. 也就是说
 
 当**先验的知识服从Beta分布**, **观测到的数据服从二项分布**, 最终得到的后验分布依旧是 Beta分布, 这所描述的就是**Beta-Binomial共轭**.
-
 
 
 贝塔分布中的参数可以理解为伪计数，伯努利分布的似然函数可以表示为，表示一次事件发生的概率，它为贝塔有相同的形式，因此可以用贝塔分布作为其先验分布。
@@ -193,7 +196,7 @@ $\begin{equation} \displaystyle Dir(\overrightarrow{p}|\overrightarrow{\alpha}) 
 
 ------
 
-二项分布的随机变量X∼B(n,p)满足如下一个很奇妙的恒等式$`\begin{equation} \label{binomial-beta} P(X \le k) = \frac{n!}{k!(n-k-1)!} \int_p^1 t^k(1-t)^{n-k-1} dt  \quad  (*) \end{equation}`$ <二项分布和 Beta 分布之间的关系>
+二项分布的随机变量X∼B(n,p)满足如下一个很奇妙的恒等式$\begin{equation} \label{binomial-beta} P(X \le k) = \frac{n!}{k!(n-k-1)!} \int_p^1 t^k(1-t)^{n-k-1} dt  \quad  (*) \end{equation}$ <二项分布和 Beta 分布之间的关系>
 
 Poisson(λ)分布可以看成是二项分布 B(n,p)在 np=λ,n→∞ 条件下的极限分布。Poisson分布的概率累积函数和Gamma 分布的概率累积函数有互补的关系
 
