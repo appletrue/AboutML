@@ -130,5 +130,5 @@ $\Psi(1) = -\gamma,$              $\Psi(2) = 1-\gamma$,
 
 $\Psi_1(1) = \zeta(2) = \frac{\pi^2}{6}$,$ \Psi_2(1) = -2\zeta(3)$
 
-------------
-[伽玛函数](http://www.52nlp.cn/lda-math-%E7%A5%9E%E5%A5%87%E7%9A%84gamma%E5%87%BD%E6%95%B01)
+----参考网址--------
+[原文伽玛函数](http://www.52nlp.cn/lda-math-%E7%A5%9E%E5%A5%87%E7%9A%84gamma%E5%87%BD%E6%95%B01)
