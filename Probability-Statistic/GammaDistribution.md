@@ -98,7 +98,7 @@ k阶导数可以用阶乘表达，于是我们用Gamma 函数表达为$\frac{\Ga
 
 Gamma 函数和欧拉常数γ 有密切关系，可以发现
 
-$\gamma = -\frac{d\Gamma(x)}{dx}|_{x=1} =\lim_{n\rightarrow \infty}(1+\frac{1}{2} + \frac{1}{3}+\cdots+\frac{1}{n} - \log n)$
+$\gamma=-\frac{d\Gamma(x)}{dx}|_{x=1} =\lim_{n\rightarrow \infty}(1+\frac{1}{2} + \frac{1}{3}+\cdots+\frac{1}{n}-\logn)$
 
 进一步还可以发现 Gamma 函数和黎曼函数ζ(s)ζ(s)有密切联系，
 
