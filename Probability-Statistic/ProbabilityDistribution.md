@@ -12,6 +12,18 @@ $f(x) = \dfrac{dF(x)}{dx}$
 
 $F(x) = \int_{-\infty}^{X}f(t)dt$
 
+常见分布的图示:
+![distr](https://github.com/appletrue/NoteML/blob/master/PICs/distr.jpeg)
+
+几种概率分布之间的关系；它们之间的变化是有规律的。
+
+- 伯努利分布相当于是扔硬币，扔一次；
+- 扔了很多次以后就变成二项分布；
+- 扔多次直到成功就是几何分布，比如扔了三次，看第一次出现正面的概率；
+- 负二项分布，是说实验n次，成功r次才停止；
+- 超几何分布跟二项分布是不同的，最核心的不同在于它是不放回的抽样，而二项分布是放回的；
+- 最核心的当然就是正态分布了。
+
 ------
 
 **离散型**随机变量分布:
@@ -266,9 +278,9 @@ $f(x|\mu,\sigma^2)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\tfrac{(x-\mu)^2}{2\sigma^2}}
 - 证明：由于每次测量误差都和其余测量误差的大小无关，因此是独立条件，所以 ∑Ni=1xi就是独立同分布的，乘以1N并不影响，减去x∗只改变了偏移量也不影响它的性质，因此测量误差服从独立同分布
 - **在误差服从正态分布的情况下，测量量仍旧可以是其他分布**
 
-### gamma分布
+### [Gamma分布](https://github.com/appletrue/NoteML/blob/master/Probability-Statistic/GammaDistribution.md)
 
-### beta分布
+### [beta分布](https://github.com/appletrue/NoteML/blob/master/Probability-Statistic/BetaDistribution.md)
 
 beta分布可以看作一个概率的概率分布，当你不知道一个东西的具体概率是多少时，它可以给出了所有概率出现的可能性大小。
 
