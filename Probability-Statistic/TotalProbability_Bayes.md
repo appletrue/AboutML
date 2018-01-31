@@ -82,7 +82,10 @@ $P(y|x_1,\cdots,x_n)=\frac{P(y)P(x_1,\cdots,x_n|y)}{P(x_1,\cdots,x_n)}$
 
 概率密度可以理解为“瞬时”的概率。对于概率密度函数，必须要满足两条性质：
 
-$\begin{array}{l}(1)\quad f(x) \ge 0;\\(2)\quad \int_{-\infty}^{\infty}f(x)dx=1\end{array}$
+$\begin{array}{l}
+(1)\quad f(x) \ge 0;\\
+(2)\quad \int_{-\infty}^{\infty}f(x)dx=1
+\end{array}$
 
 所以只要f(x)整体的积分为1就可以了，并不要求局部的每个值都比1小。就像δ函数（[维基百科-delta函数](https://zh.wikipedia.org/zh/%E7%8B%84%E6%8B%89%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0)），虽然在0上的函数值可以大于1，但整体的积分却永远是1。
 
@@ -173,7 +176,10 @@ $p(F_1=6|男)=\frac{1}{\sqrt{2\pi \sigma^2}}\exp \left(\frac{-(6-\mu)^2}{2\sigma
 
 综上，我们计算可得：
 
-$\begin{array}{c}p(F_1=6|男)p(F_2=130|男)p(F_3=8|男)P(男)=6.1984\times 10^{-9}\\p(F_1=6|女)p(F_2=130|女)p(F_3=8|女)P(女) = 5.3778 \times 10^{-4}\end{array}$
+$\begin{array}{c}
+p(F_1=6|男)p(F_2=130|男)p(F_3=8|男)P(男)=6.1984\times 10^{-9}\\
+p(F_1=6|女)p(F_2=130|女)p(F_3=8|女)P(女) = 5.3778 \times 10^{-4}
+\end{array}$
 
 计算结果可以看出，这个人是女性的可能性远大于是男性的可能性。
 
