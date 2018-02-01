@@ -22,7 +22,7 @@
 
 给定一个概率分布 D，已知其 概率密度函数（连续分布）或 概率质量函数（离散分布）为$f_{D}$，以及一个分布参数$ \theta$，我们可以从这个分布中抽出一个具有n个值的采样${ X_{1},X_{2},\ldots ,X_{n}}$，利用$f_{D}$计算出其似然函数：
 
-$ lik(\theta \mid x_1,\dots ,x_n)=f_{\theta }(x_{1},\dots ,x_{n})$
+$lik(\theta \mid x_1,\dots ,x_n)=f_{\theta }(x_{1},\dots ,x_{n})$
 
 若 D 是离散分布，$ f_{\theta}$即是在参数为$\theta$时观测到这一采样的概率。
 
@@ -30,7 +30,7 @@ $ lik(\theta \mid x_1,\dots ,x_n)=f_{\theta }(x_{1},\dots ,x_{n})$
 
 一旦我们获得$ X_{1},X_{2},... ,X_{n}$，我们就能求得一个关于${ \theta }$的估计$ \hat \theta$。它将使得随机样本$( X_{1},X_{2},\ldots ,X_{n})$（落在我们已有样本$(x_{1},x_{2},\ldots ,x_{n})$的概率取得最大值。即选择一个${\hat \theta}$，使得
 
-L(\hat \theta;x_1,x_2,...,x_n) =  \underset {θ∈Θ}{ max}L{\theta}(\theta; x_1,x_2,...,x_n) 
+$L(\hat \theta;x_1,x_2,...,x_n) =  \underset {θ∈Θ}{ max}L{\theta}(\theta; x_1,x_2,...,x_n)$ 
 
 > 求点估计的方法：最大似然估计法、矩估计法、最小二乘法、贝叶斯估计法。重点就是最大似然法。
 
@@ -73,7 +73,7 @@ $\hat l=\dfrac {1}{n} lnL$
 
 而平时所称最大似然为最大的对数平均似然，即：
 
-$\hat \theta _{mle} = \underset {\theta \in \Theta} {argmax} \hat l(\theta \mid x_1,x_2,...,x_n)=\underset {\theta} {arg max}\prod_{i=1}^nf(x_i\mid \theta)$ 
+$\hat \theta_{mle} = \underset{\theta \in \Theta} {argmax} \hat l(\theta \mid x_1,x_2,...,x_n)=\underset {\theta} {arg max}\prod_{i=1}^nf(x_i\mid \theta)$ 
 
 1,未知参数只有一个（θ为标量）
 
