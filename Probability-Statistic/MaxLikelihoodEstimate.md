@@ -30,7 +30,7 @@ $ lik(\theta \mid x_1,\dots ,x_n)=f_{\theta }(x_{1},\dots ,x_{n})$
 
 一旦我们获得$ X_{1},X_{2},... ,X_{n}$，我们就能求得一个关于${ \theta }$的估计$ \hat \theta$。它将使得随机样本$( X_{1},X_{2},\ldots ,X_{n})$（落在我们已有样本$(x_{1},x_{2},\ldots ,x_{n})$的概率取得最大值。即选择一个${\hat \theta}$，使得
 
-$L(\hat \theta;x_1,x_2,...,x_n) = maxL \θ∈Θ {\theta}(\theta; x_1,x_2,...,x_n)$ 
+L(\hat \theta;x_1,x_2,...,x_n) =  \underset {θ∈Θ}{ max}L{\theta}(\theta; x_1,x_2,...,x_n) 
 
 > 求点估计的方法：最大似然估计法、矩估计法、最小二乘法、贝叶斯估计法。重点就是最大似然法。
 
@@ -45,31 +45,31 @@ $L(\hat \theta;x_1,x_2,...,x_n) = maxL \θ∈Θ {\theta}(\theta; x_1,x_2,...,x_n
 
 已知条件：总体X属连续型，概率密度 f(x;θ)，θ∈Θ
 
-设$，，，X_1，X_2，··· ，X_n$是来自X的一个样本，则$，，，X_1，X_2，··· ，X_n$的联合密度为：
+设$X_1，X_2，··· ，X_n$是来自X的一个样本，则$，，，X_1，X_2，··· ，X_n$的联合密度为：
 
 $f(x_1,x_2,...,x_n \mid \theta)=f(x_1 \mid \theta)f(x_2 \mid \theta)...f(x_n \mid \theta)=\prod _{i=1}^n f(x_i \mid \theta)$
 
- 设$，，，x_1，x_2，··· ，x_n$是相应于样本$，，，X_1，X_2，··· ，X_n$的一个样本值，则随机点（$，，，X_1，X_2，··· ，X_n$）落在点（$，，，x_1，x_2，··· ，x_n$）的领域内的概率近似地为：
+ 设$x_1，x_2，··· ，x_n$是相应于样本$X_1，X_2，··· ，X_n$的一个样本值，则随机点（$X_1，X_2，··· ，X_n$）落在点（$x_1，x_2，··· ，x_n$）的领域内的概率近似地为：
 
-$\prod_{i=1}^nf(x_i,\theta)dx_i$，其值随 θ 的取值而变化。**"模型已定,参数未知",此时已知为$，，，x_1，x_2，··· ，x_n$,未知的是$\theta$**
+$\prod_{i=1}^nf(x_i,\theta)dx_i$，其值随 θ 的取值而变化。**"模型已定,参数未知",此时已知为$x_1，x_2，··· ，x_n$,未知的是$\theta$**
 
 与离散型的情况一样，我们取θ的估计值$\hat \theta$使概率$\prod_{i=1}^nf(x_i,\theta)dx_i$取得最大值，但因子$\prod_{i=1}^ndx_i$ 不随θ而改变，故只需考虑函数：
 
-$，，，L(\theta) = L(x_1，x_2，··· ，x_n;\theta) = \prod_{i=1}^n f(x_i;\theta)$的最大值。这里**$L(θ)$称为样本的似然函数**。若
+$L(\theta) = L(x_1，x_2，··· ，x_n;\theta) = \prod_{i=1}^n f(x_i;\theta)$的最大值。这里**$L(θ)$称为样本的似然函数**。若
 
-$，，，，，，L(\theta) = L(x_1，x_2，··· ，x_n;\hat \theta) =\underset {\theta \in \Theta }{max} L(x_1，x_2，··· ，x_n;\hat \theta) $
+$L(\theta) = L(x_1，x_2，··· ，x_n;\hat \theta) =\underset {\theta \in \Theta }{max} L(x_1，x_2，··· ，x_n;\hat \theta) $
 
-则称$，，，\hat \theta(x_1，x_2，··· ，x_n)$为$\theta$ 的最大似然估计值,称$，，，\hat \theta(X_1，X_2，··· ，X_n)$为θ的最大似然估计量。
+则称$\hat \theta(x_1，x_2，··· ，x_n)$为$\theta$ 的最大似然估计值,称$\hat \theta(X_1，X_2，··· ，X_n)$为θ的最大似然估计量。
 
 到这，**确定最大似然估计量的问题就归结为微分学中的求最大值**问题。
 
 实际应用中,常用的是两边取对数,得到:
 
-$，，，lnL(x_1，x_2，··· ，x_n; \theta) = \Sigma_{i=1}^n lnf(x_i\mid \theta)$
+$lnL(x_1，x_2，··· ，x_n; \theta) = \Sigma_{i=1}^n lnf(x_i\mid \theta)$
 
 $\hat l=\dfrac {1}{n} lnL$
 
-其中,$，，，l(\theta)=lnL(x_1，x_2，··· ，x_n; \theta) $ 称为对数似然,而$\hat l$称为平均对数似然。
+其中,$l(\theta)=lnL(x_1，x_2，··· ，x_n; \theta) $ 称为对数似然,而$\hat l$称为平均对数似然。
 
 而平时所称最大似然为最大的对数平均似然，即：
 
@@ -97,9 +97,9 @@ $\nabla_\theta\prod_{i=1}^n f(x_i;\theta)=\nabla_\theta lnL(\theta)=\Sigma_{i=1}
 
 > **y = f(t)** 是一般常見的函数式，如果給定一個t值，f（t）函数式會赋一個值給y。
 >
-> **y = max f(t) **代表：y 是f(t)函式所有的值中最大的output。
+> **y = max f(t)**代表：y 是f(t)函式所有的值中最大的output。
 >
-> **y = arg max f(t) **代表：y 是f(t)函式中，會產生最大output的那個參數t。
+> **y = arg max f(t)**代表：y 是f(t)函式中，會產生最大output的那個參數t。
 >
 > 例子:
 >
@@ -140,7 +140,3 @@ $\nabla_\theta\prod_{i=1}^n f(x_i;\theta)=\nabla_\theta lnL(\theta)=\Sigma_{i=1}
 ![eg1-likehood](https://github.com/appletrue/NoteML/blob/master/PICs/eg1-likehood.png)
 
 ![eg2-likehood](https://github.com/appletrue/NoteML/blob/master/PICs/eg2-likehood.png)
-
-
-
-
