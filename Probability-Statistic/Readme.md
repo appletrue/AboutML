@@ -1,6 +1,8 @@
 
 ## Good Blogs
 
+http://blog.csdn.net/raintungl/article/details/78188182
+
 1,[Tsingke](http://www.cnblogs.com/tsingke/p/7635398.html)
 
 2,[Github:josephmisiti](https://github.com/josephmisiti/awesome-machine-learning#python-cv)
