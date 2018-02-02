@@ -6,7 +6,7 @@
 
 对角线法则：主对角线上两元素之积-副对角线上两元素之积
 
-$\begin{vmatrix}a_{11} & a_{12} \\{a_{21}} & a_{22} \end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}$
+$\begin{vmatrix}a_{11} & a_{12} \\ a_{21} & a_{22} \end{vmatrix}= a_{11}a_{22}-a_{12}a_{21}$
 
 #### 三阶行列式计算:
 
@@ -20,7 +20,7 @@ $\begin{vmatrix}a_{11} & a_{12} \\{a_{21}} & a_{22} \end{vmatrix}=a_{11}a_{22}-a
 
 当 p1,p2, p3是奇排列时，对应的项取负号。	
 
-$\begin{vmatrix}a_{11} & a_{12}& a_{13} \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{vmatrix}=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{32}a_{21}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}$
+$\begin{vmatrix}a_{11} & a_{12}& a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix}=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{32}a_{21}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}$
 
 三阶行列式可以写成：
 
@@ -40,7 +40,7 @@ $P_n =  n(n-1)(n-2)… 3*2*1 = n!$
 
 ## n阶行列式
 
-$\begin{vmatrix}a_{11} & a_{12}& \cdots &a_{1n} \\a_{21} & a_{22} & \cdots &a_{2n} \\ \vdots & \vdots &  &\vdots \\a_{n1} & a_{n2} &\cdots & a_{nn}\end{vmatrix}=\underset {p_1p_2...p_n} \Sigma(-1)^{t(p_1p_2...p_n)}a_{1p_1} a_{2p_2} …a_{np_n}  $,简记作$det(a_ij)$,其中$a_{ij}$为行列式D的(i,j)元。
+$\begin{vmatrix}a_{11} & a_{12}& \cdots &a_{1n} \\ a_{21} & a_{22} & \cdots &a_{2n} \\ \vdots & \vdots &  &\vdots \\ a_{n1} & a_{n2} &\cdots & a_{nn}\end{vmatrix}=\underset {p_1p_2...p_n} \Sigma(-1)^{t(p_1p_2...p_n)}a_{1p_1} a_{2p_2} …a_{np_n}  $,简记作$det(a_ij)$,其中$a_{ij}$为行列式D的(i,j)元。
 
 N阶行列式共有 n! 项。
 
@@ -110,9 +110,9 @@ $=\underset {{i_1i_2…i_n},{j_1j_2…j_n}} \Sigma(-1)^{t(i_1i_2…i_n)+t(i_1,j_
 
 $D=a_{i1}A{i1} +a_{i2}A{i2}+ …+a_{in}A_{in}(i = 1,2,…,n)$	
 
-$\begin{vmatrix}a_{11} & a_{12}& a_{13} \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{vmatrix}=\begin{vmatrix}a_{11} +0+0& 0+a_{12}+0& 0+0+a_{13} \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{vmatrix}$
+$\begin{vmatrix}a_{11} & a_{12}& a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix}=\begin{vmatrix}a_{11} +0+0& 0+a_{12}+0& 0+0+a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix}$
 
-$=\begin{vmatrix}a_{11} & 0& 0 \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{vmatrix}+\begin{vmatrix}0 & a_{12}& 0 \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{vmatrix}+\begin{vmatrix}0 &0& a_{13} \\a_{21} & a_{22} & a_{23} \\a_{31} & a_{32} & a_{33}\end{vmatrix}$
+$=\begin{vmatrix}a_{11} & 0& 0 \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix}+\begin{vmatrix}0 & a_{12}& 0 \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix}+\begin{vmatrix}0 &0& a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{vmatrix}$
 
 $=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}$
 
