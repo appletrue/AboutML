@@ -125,7 +125,9 @@ $f(x) = f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n+o(x^n)$
 
 $ e^x = 1 + \cfrac x {1!} + \cfrac {x^2} {2!}+ ...+\cfrac {x^n} {n!}+o(x^n)$ 
 
-$e^x$ 在x = 0 的附近可以用以上多项式来近似地表示,称为指数函数在0处的n 阶泰勒展开公式.这个公式只对0 附近的x 有用，x 离0 越远，这个公式就越不准确。实际函数值和多项式的偏差称为泰勒公式的**余项**。
+$e^x$ 在x = 0 的附近可以用以上多项式来近似地表示,称为指数函数在0处的n 阶泰勒展开公式.这个公式只对0 附近的x 有用，x 离0 越远，这个公式就越不准确。实际函数值和多项式的偏差称为泰勒公式的**余项**。如图：
+
+![Taylorspolynomialexbig](https://github.com/appletrue/NoteML/blob/master/PICs/Taylorspolynomialexbig.png)
 
 $R_n(x) = e^x - \Big( 1 + \cfrac x {1!} + \cfrac {x^2} {2!}+ ...+\cfrac {x^n} {n!}+o(x^n) \bigg) $ 
 
