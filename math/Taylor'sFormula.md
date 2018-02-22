@@ -34,18 +34,18 @@ $\cfrac {f(x)-f(x_0)-f'(x_0)(x-x_0)}{(x-x_0)^2} = \Sigma_{i=2}^n a_i(x-x_0)^{i-2
 
 $lim_{x \to x_0} \cfrac {f(x)-f(x_0)-f'(x_0)(x-x_0)}{(x-x_0)^2}$
 
-$=lim_{x \to x_0} \cfrac{f'(x)-f'(x_0)}{2(x-x_0)}=\frac {1}{2} f''(x_0)$
+$=lim_{x \to x_0} \cfrac{f'(x)-f'(x_0)}{2(x-x_0)}=\cfrac {1}{2} f''(x_0)$
 
-因此,$a_2=\frac{1}{2}f''(x_0)$. 以此类推,可得:
+因此,$a_2=\cfrac{1}{2}f''(x_0)$. 以此类推,可得:
 
-$a_k=\frac{1}{k!}f^{(k)}(x_0), k =0,1,2...,n$, 其中, 记 $f^{(0)}(x)=f(x) $
+$a_k=\cfrac{1}{k!}f^{(k)}(x_0), k =0,1,2...,n$, 其中, 记 $f^{(0)}(x)=f(x) $
 
 
 ## Taylor定理:
 
 设 n 是一个正整数。如果定义在一个包含$x_0$的区间上的函数 f 在$x_0$ 点处 n+1 次可导，那么对于这个区间上的任意 x，都有：
 
-$f(x) = f(x_0)+ \frac {f'(x_0)}{1!}(x-x_0) + \cfrac {f^{(2)} x_0}{2!} (x-x_0)^2+...+ \frac {f^{(n)}{x_0}}{n!}(x-x_0)^n+R_n(x)$
+$f(x) = f(x_0)+ \cfrac {f'(x_0)}{1!}(x-x_0) + \cfrac {f^{(2)} x_0}{2!} (x-x_0)^2+...+ \cfrac {f^{(n)}{x_0}}{n!}(x-x_0)^n+R_n(x)$
 
 其中的多项式称为函数在$x_0$处的泰勒展开式，剩余的 $R_{n}(x)$ 是泰勒公式的余项，是$(x-a)^{n}$的高阶无穷小。
 
@@ -78,9 +78,9 @@ $=\cfrac 1{n!}  R^{n}(x_0)$,
 
  设函数 f 在点 $x_0$ 的某邻域内 n +1阶可微，则在此邻域内成立 
 
-$其中f(x) = \Sigma_{i=0}^n \frac {1} {i!}f^{(i)} (x_0) (x-x_0)^i+\frac {1} {{n+1}!}f^{(n+1)} (x_0+\theta(x-x_0)) (x-x_0)^{n+1},其中 0< \theta <1$
+$其中f(x) = \Sigma_{i=0}^n \cfrac {1} {i!}f^{(i)} (x_0) (x-x_0)^i+\cfrac {1} {{n+1}!}f^{(n+1)} (x_0+\theta(x-x_0)) (x-x_0)^{n+1},其中 0< \theta <1$
 
-证明: 记 $R(x)=f(x)- \Sigma_{i=0}^n \frac {1} {i!}f^{(i)} (x_0) (x-x_0)^i$,则有
+证明: 记 $R(x)=f(x)- \Sigma_{i=0}^n \cfrac {1} {i!}f^{(i)} (x_0) (x-x_0)^i$,则有
 
 $R(x_0)=R'(x_0)=R''(x_0)=...=R^{(n)}(x_0)=0, R^{(n+1)}(x)= f^{(n+1)}(x)$
 
@@ -98,7 +98,7 @@ $ \cfrac{R(x)}{(x-x_0)^{n+1}} = \cfrac {R^{n+1}(\xi)}{(n+1)!} = \cfrac {f^{(n+1)
 
 其中$\xi$介于$x_0$ 与$x$之间,记作 $ \xi = x_0 + \theta (x-x_0)$,必有 $0<\theta<1$。这样
 
- $R(x)= \frac {f^{(n+1)}(x_0+\theta(x-x_0))} {(n+1)!} (x-x_0)^{n+1}$
+ $R(x)= \cfrac {f^{(n+1)}(x_0+\theta(x-x_0))} {(n+1)!} (x-x_0)^{n+1}$
 
 - **带 Lagrange 余项的 Taylor 公式是 Lagrange 微分中值定理的推广。** 
 
@@ -111,13 +111,13 @@ $|R(x)|≤ \cfrac {M}{(n+1)!}|x-x_0|^{n+1}$ **
 
 如果 $x_0 = 0$，那么,带有以上两种余项形式的 Taylor 公式又称为 Maclaurin 公式， 
 
-$f(x) = f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n+o(x^n)$
+$f(x) = f(0)+ f' (0) x + ...+\cfrac {f^{n}(0)}{n!}x^n+o(x^n)$
 
-和 $f(x) = f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n+\frac {f^{n+1}(\theta x)}{(n+1)!}x^{n+1}$,其中 $0<\theta<1$
+和 $f(x) = f(0)+ f' (0) x + ...+\cfrac {f^{n}(0)}{n!}x^n+\frac {f^{n+1}(\theta x)}{(n+1)!}x^{n+1}$,其中 $0<\theta<1$
 
 由此得近似公式:
 
- $f(x) \approx f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n$
+ $f(x) \approx f(0)+ f' (0) x + ...+\cfrac {f^{n}(0)}{n!}x^n$
 
 ## Taylor 公式应用
 
@@ -148,5 +148,3 @@ http://www.drhuang.com/chinese/science/mathematics/handbook/
 http://math.fudan.edu.cn/gdsx/TUSG.HTM
 
 https://www.zhihu.com/question/21149770
-
-
