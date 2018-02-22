@@ -52,6 +52,7 @@ $f(x) = f(x_0)+ \cfrac {f'(x_0)}{1!}(x-x_0) + \cfrac {f^{(2)} x_0}{2!} (x-x_0)^2
 $R_{n}(x)$ 的表达形式有若干种，分别以不同的数学家命名。
 
 ## 余项估计
+
 拉格朗日型余项或积分型余项可以帮助估计泰勒展开式和函数在一定区间之内的误差。
 
 ### **定理1 (带Peano余项的Taylor公式 )**
@@ -100,7 +101,14 @@ $ \cfrac{R(x)}{(x-x_0)^{n+1}} = \cfrac {R^{n+1}(\xi)}{(n+1)!} = \cfrac {f^{(n+1)
 
  $R(x)= \cfrac {f^{(n+1)}(x_0+\theta(x-x_0))} {(n+1)!} (x-x_0)^{n+1}$
 
-- **带 Lagrange 余项的 Taylor 公式是 Lagrange 微分中值定理的推广。** 
+- **带 Lagrange 余项的 Taylor 公式是 Lagrange 中值定理的推广。** 
+
+**拉格朗日中值定理**：如果函数 f(x) 满足，在 [a,b] 上连续，在 (a,b) 上可导，那么至少有一点$ \theta  ( a<\theta <b )$ 使等式 $f'(\theta)=\cfrac{f(a)-f(b)}{a-b} $成立。
+
+**几何意义**:
+
+![82_hd](https://github.com/appletrue/NoteML/blob/master/PICs/82_hd.jpg)
+N=0 时,泰勒公式的几何意义好理解,高阶时呢? 
 
 - **带有积分型余项的泰勒公式可以看作微积分基本定理的推广, $R_n(x) = \int_a^x \cfrac {f^{(n+1)}x_0 }{n!}(x-x_0)^n dt$
 
@@ -118,6 +126,10 @@ $f(x) = f(0)+ f' (0) x + ...+\cfrac {f^{n}(0)}{n!}x^n+o(x^n)$
 由此得近似公式:
 
  $f(x) \approx f(0)+ f' (0) x + ...+\cfrac {f^{n}(0)}{n!}x^n$
+ 
+ 其中: 
+ 
+ $\int_0^x (\int_0^x {f''(0)} \cdot  dx ) \cdot dx = \int_0^x [f''(0)x-f''(0) \cdot{0}] dx = \int_0^x [f''(0)x ]\cdot dx =f''(0)(\cfrac{x^2-0^2}{2}) = \cfrac {x^2}{2!}f''(0)$
 
 ## Taylor 公式应用
 
@@ -139,11 +151,39 @@ $(1+x)^\alpha =1+\alpha x + \cfrac {\alpha (\alpha-1)}{2!}x^2+...+ \cfrac {\alph
 
 $ln(1+x)=x-\cfrac {x^2} {2}+ \cfrac {x^3} {3}-\cfrac {x^4} {4}+ ...+(-1)^{n-1}\cfrac {x^n} {n}+o(x^n)$
 
+**泰勒公式是微分的升级版，是求积分的升级版??**
+
+给定一个f(x)，都可以唯一确定一个导函数f '(x)，导函数给出了原函数的变化情况。
+比如f(x)=x^{3} 导函数为$f^{'} (x)=3 x^{2} $
+但是，倒过来就不行了，一个导函数对应原函数为，，………无穷多个。写成积分形式就是为什么呢，因为在求导的过程中，我们虽然得到的函数今后的变化情况，但损失了一部分信息，就是原函数的初始值。概括一下，原函数的信息=导函数的信息+初始值信息，初始值信息没了，一个导函数就对应多个原函数了。知道了原因，我们就可以去掉上面那个恼人的C了，加入初始值信息就好了。
+
+$\int_{0}^{x} f'(x)\cdot  dx+f(0)=\int_{0}^{x} 3x^{2}\cdot  dx+0^{3} $
+$=x^{3} +C-0^3-C+0^3=x^3=f(x) $
+
+f（0）就是初始信息。当然初始信息可以从任意位置开始，不一定从0开始这时候我们得到了
+
+$ f(x)=\int_{0}^{x} f'(x)\cdot  dx+f(0) $ (原函数的信息=导函数的信息+初始值信息)
+
+继续这个过程 $f'(x)=\int_{0}^{x} f''(x)\cdot  dx+f'(0)$
+
+代入得
+$f(x)=\int_{0}^{x} (\int_{0}^{x} f''(x)\cdot  dx+f'(0))\cdot  dx+f(0)$
+
+$=\int_{0}^{x} \int_{0}^{x} f''(x)\cdot  dx\cdot  dx+\int_{0}^{x}  f'(0)\cdot  dx+f(0)$
+$=\int_{0}^{x} \int_{0}^{x} f''(x)\cdot  dx\cdot  dx+\frac{x}{1!} f'(0)+f(0)$
+
+再接着做下去
+$=\int_{0}^{x}\int_{0}^{x} \int_{0}^{x} f'''(x)\cdot  dx\cdot  dx\cdot  dx+\frac{x^2}{2!} f''(0)+\frac{x}{1!} f'(0)+f(0)$
+
+无限做下去，前面是余项，整个是泰勒展开式如果是普通多项式的导数，做下去总有导数为0的时候，这时余项就为0，是有限项。如果不是普通多项式，展开项数为无限，在0的附近，余项是很高阶的无穷小。
+
+作者：刘龙
+链接：https://www.zhihu.com/question/21149770/answer/80390055
+来源：知乎
+
 -----【参考资料】--------------------
 
 [Wiki百科:泰勒公式](https://zh.wikipedia.org/wiki/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F)
-
-http://www.drhuang.com/chinese/science/mathematics/handbook/
 
 http://math.fudan.edu.cn/gdsx/TUSG.HTM
 
