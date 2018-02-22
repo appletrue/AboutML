@@ -8,6 +8,112 @@
 
 设函数 f 在$x_0$处n阶可微，试找出一个关于$x-x_0$  的 n 次多项式，$a_0+ a_1(x- x_0 )+...+ a_n (x- x_0 )^n$ ，使这个多项式与 f之差是比$ (x- x_0 )^n$ 高阶的无穷小。
 
+如果成立着 $f(x)=\Sigma_{i=0}^n a_i(x-x_0)^i+o((x-x_0)^n), ---(*)$看多项式各项的系数$a_i$和f的关系.
+
+上式子两边,令 $x \to x_0$,利用 f 在$x_0$ 的连续性,得 $a_0 = f(x_0) $
+
+将$a_0$代入(*)式,移项后得:
+
+$\cfrac {f(x)-f(x_0)}{x-x_0} = \Sigma_{i=1}^n a_i(x-x_0)^{i-1}+o((x-x_0)^{n-1})$
+
+上式两边再令 $x \to x_0$,由 $f'(x_0)$的定义可得 $f'(x_0) = a_1$
+
+把$a_0,a_1 $代入(*)式,移项后得
+
+$\cfrac {f(x)-f(x_0)-f'(x_0)(x-x_0)}{(x-x_0)^2} = \Sigma_{i=2}^n a_i(x-x_0)^{i-2}+o((x-x_0)^{n-2})$
+
+上式两边另$x \to x_0$,右边的极限为$a_2$,左边的极限为:
+
+$lim_{x \to x_0} \cfrac {f(x)-f(x_0)-f'(x_0)(x-x_0)}{(x-x_0)^2}$
+
+$=lim_{x \to x_0} \cfrac{f'(x)-f'(x_0)}{2(x-x_0)}=\frac {1}{2} f''(x_0)$
+
+因此,$a_2=\frac{1}{2}f''(x_0)$. 以此类推,可得:
+
+$a_k=\frac{1}{k!}f^{(k)}(x_0), k =0,1,2...,n$, 其中, 记 $f^{(0)}(x)=f(x) $
+
+## 定理的叙述和证明
+
+### **定理1 (带Peano余项的Taylor公式 )**
+
+设函数f 在$ x_0$ 处有 n 阶导数，则 $f(x) = \Sigma_{i=0}^n \frac {1} {i!}f^{(i)} x_0 (x-x_0)^i+ o(x-x_0)^n$
+
+证明：记$R(x)=f(x)- \Sigma_{i=0}^n \frac {1} {i!}f^{(i)} x_0 (x-x_0)^i$,则有 
+
+$R(x_0)=R'(x_0)=R''(x_0)=...=R^{(n)}(x_0)=0$。
+
+反复应用 L’Hospital法则, 可得
+
+$lim_{x \to x_0} \cfrac{R(x)}{(x-x_0)^n} = lim_{x \to x_0} \cfrac{R'(x)}{n(x-x_0)^{n-1}}$
+
+$=lim_{x \to x_0} \cfrac{R''(x)}{n(n-1)(x-x_0)^{n-2}}=...$
+
+$=lim_{x \to x_0} \cfrac{R^{n-1}(x)}{n!(x-x_0)} = \cfrac 1{n!} \cfrac {R^{n-1}(x)-R^{n-1}(x_0)}{x-x_0}$
+
+$=\cfrac 1{n!}  R^{n}(x_0)$,
+
+因此, $ R(x) = o((x-x_0)^n)$
+
+### **定理2  （带 Lagrange 余项的 Taylor 公式）**
+
+ 设函数 f 在点 $x_0$ 的某邻域内 n +1阶可微，则在此邻域内成立 
+
+$其中f(x) = \Sigma_{i=0}^n \frac {1} {i!}f^{(i)} (x_0) (x-x_0)^i+\frac {1} {{n+1}!}f^{(n+1)} (x_0+\theta(x-x_0)) (x-x_0)^{n+1},其中 0< \theta <1$
+
+证明: 记 $R(x)=f(x)- \Sigma_{i=0}^n \frac {1} {i!}f^{(i)} (x_0) (x-x_0)^i$,则有
+
+$R(x_0)=R'(x_0)=R''(x_0)=...=R^{(n)}(x_0)=0, R^{(n+1)}(x)= f^{(n+1)}(x)$
+
+利用Cauchy中值定理,可得
+
+$\cfrac{R(x)}{(x-x_0)^{n+1}} = \cfrac {R(x)-R(x_0)}{(x-x_0)^{n+1}}=\cfrac{R'(\xi_1)}{(n+1)(\xi_1-x_0)^n}$
+
+其中$\xi_1$介于$x_0$ 与$x$之间,从而
+
+$\cfrac{R(x)}{(x-x_0)^{n+1}} = \cfrac {R'(\xi_1)-R'(x_0)}{(n+1)(\xi_1-x_0)^n}=\cfrac{R''(\xi_2)}{(n+1)n(\xi_2-x_0)^{n-1}}$
+
+其中$\xi_2$介于$x_0 $与$\xi_1$之间,从而介于$x_0$ 与$x$之间,以此类推,可以得到
+
+$ \cfrac{R(x)}{(x-x_0)^{n+1}} = \cfrac {R^{n+1}(\xi)}{(n+1)!} = \cfrac {f^{(n+1)}(\xi)}{(n+1)!} $
+
+其中$\xi$介于$x_0$ 与$x$之间,记作 $ \xi = x_0 + \theta (x-x_0)$,必有 $0<\theta<1$。这样
+
+ $R(x)= \frac {f^{(n+1)}(x_0+\theta(x-x_0))} {(n+1)!} (x-x_0)^{n+1}$
+
+- **带 Lagrange 余项的 Taylor 公式是 Lagrange 中值定理的推广。** 
+
+- **如 果 函 数 f 的 n+1 阶 导 数 在 (a,b) 中 有 界 ：$ | f^{ (n+1)} (x) |≤M ,x \in (a,b) , x_0 \in (a,b) $，那么,在 (a,b) 中有如下的余项估计： 
+$|R(x)|≤ \cfrac {M}{(n+1)!}|x-x_0|^{n+1}$ **
+
+## 定理的一个常用形式： Maclaurin 公式 
+
+如果 $x_0 = 0$，那么,带有以上两种余项形式的 Taylor 公式又称为 Maclaurin 公式， 
+
+$f(x) = f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n+o(x^n)$
+
+和 $f(x) = f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n+\frac {f^{n+1}(\theta x)}{(n+1)!}x^{n+1}$,其中 $0<\theta<1$
+
+由此得近似公式:
+
+ $f(x) \approx f(0)+ f' (0) x + ...+\frac {f^{n}(0)}{n!}x^n$
+
+## Taylor 公式应用
+
+根据定义求 $和e^x ,sinx,cosx,(1+x)^\alpha 和 ln(1+x) $的Taylor 公式.
+
+$ e^x = 1 + \cfrac x {1!} + \cfrac {x^2} {2!}+ ...+\cfrac {x^n} {n!}+o(x^n)$ 
+
+$sinx=x- \cfrac {x^3} {3!}+ \cfrac {x^5} {5!}-...+(-1)^{n-1}  \cfrac {x^{2n-1}} {(2n-1)!}+o( x^{2n})$
+
+$cosx=1- \cfrac {x^2} {2!}+ \cfrac {x^4} {4!}-...+(-1)^n  \cfrac {x^{2n}} {(2n)!}+o( x^{2n+1})$
+
+$(1+x)^\alpha =1+\alpha x + \cfrac {\alpha (\alpha-1)}{2!}x^2+...+ \cfrac {\alpha (\alpha-1)...(\alpha-n+1)}{n!}x^n +o(x^n)$
+
+$ln(1+x)=x-\cfrac {x^2} {2}+ \cfrac {x^3} {3}-\cfrac {x^4} {4}+ ...+(-1)^{n-1}\cfrac {x^n} {n}+o(x^n)$
+
+
+
+
 http://www.drhuang.com/chinese/science/mathematics/handbook/
 
 http://math.fudan.edu.cn/gdsx/TUSG.HTM
