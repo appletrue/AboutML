@@ -56,7 +56,11 @@ $\begin{aligned} a^1 = \begin{bmatrix} x_0 \\ x_1 \\ x_2 \end{bmatrix} \end{alig
 
 第二层是隐藏层，激励通过特征值与区中相乘得到，然后取sigmoid函数变换，得到$a^2$，未变换之前的记为$z^2$：
 
-$\begin{aligned} z^2_1 &= \theta^1_{10} *x_0 + \theta^1_{11}*x_1+\theta^1_{12} * x_2 \\ z^2_2 &= \theta^1_{20} *x_0 + \theta^1_{21}*x_1+\theta^1_{22} * x_2 \\ z^2 &= \begin{bmatrix} z^2_1 \\ z^2_2 \end{bmatrix} \\ a^2 &= sigmoid(z^2) \\ a^2 &= \begin{bmatrix} 1\\ a^2_1\\ a^2_2 \end{bmatrix} \\ \end{aligned}$
+$ z^2_1 = \theta^1_{10} *x_0 + \theta^1_{11}*x_1+\theta^1_{12} * x_2 $
+$ z^2_2 = \theta^1_{20} *x_0 + \theta^1_{21}*x_1+\theta^1_{22} * x_2 $
+$ z^2 = \begin{bmatrix} z^2_1 \\ z^2_2 \end{bmatrix} $
+$a^2 &= sigmoid(z^2) $
+$a^2 &= \begin{bmatrix} 1\\ a^2_1\\ a^2_2 \end{bmatrix} $
 
 最后加上了偏置项；
 
@@ -100,7 +104,7 @@ $\frac{\partial J(\Theta)}{\partial \theta^2_{11}} = \frac{1}{m}\left[ a^3 -y \r
 
 对 $θ^1_{12}$求偏导数
 
-$\frac{\partial J(\Theta)}{\partial \theta^1_{12}} & = - \frac{1}{m}\left[ y* \frac{1}{s(z^3)} - (1-y) * \frac{1}{1-s(z^3)} \right] * s(z^3)*(1-s(z^3)) * \theta^2_{11}*s(z^2)*(1-s(z^2))*x_2 $
+$\frac{\partial J(\Theta)}{\partial \theta^1_{12}}  = - \frac{1}{m}\left[ y* \frac{1}{s(z^3)} - (1-y) * \frac{1}{1-s(z^3)} \right] * s(z^3)*(1-s(z^3)) * \theta^2_{11}*s(z^2)*(1-s(z^2))*x_2 $
 $= -\frac{1}{m}*\left[ a^3 -y \right] * \theta^2_{11}*s(z^2)*(1-s(z^2))*x_2 $
 $= -\frac{1}{m} * \delta^3 * \theta^2_{11}*s(z^2)*(1-s(z^2))*x_2 $
 
