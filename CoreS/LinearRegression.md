@@ -26,6 +26,8 @@
 
 $J(\theta)=\dfrac{1}{2m}\sum\limits_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$, m为样本数
 
+#### **几何和矩阵形式理解**
+
 矩阵表达为：$J(\theta)=\dfrac{1}{2m}(X\theta-y)^T(X\theta-y)$
 
 ![882565](https://github.com/appletrue/NoteML/blob/master/PICs/882565.jpg)
@@ -42,11 +44,60 @@ $\begin{equation}\hat{y} = X\hat{w} = X(X^{T}X)^{-1}X^{T}y\end{equation}$
 
 ![2X](https://github.com/appletrue/NoteML/blob/master/PICs/2X.jpg)
 
-记样本为$(x^{(i)},y^{(i)})$,对样本预测为$\hat y^{(i)}|_θ $，该记法表示该预测依赖于参数 θ 的选取。
+####------ 矩阵推导：---------
+
+令矩阵A是系数矩阵,且A的列线性独立，一般A的第一列或最后一列是1，用于表示截距，但是这对我们的推导没有任何影响。y是我们的目标结果。现在需要计算一个权重向量w，使得差的平方错误最小，记作:
+
+$\begin{equation*}\begin{aligned}& \underset{x}{\text{min}} && E(w) \\& \text{s.t.} && E(w)=|Aw-y|^2\end{aligned}\end{equation*}$
+
+对E(x)做相关变化
+
+$\begin{align}	E(w) &= (Aw-y)^T(Aw-y) \\ 		 &= (w^TA^T-y^T)(Aw-y) \\ 		 &= w^TA^TAw - w^TA^Ty - y^TAw + y^Ty \\		 &= w^TA^TAw - y^TAw - y^TAw + y^Ty \\		 &= w^TA^TAw - 2y^TAw + y^Ty \\\end{align}$
+
+E(w)E(w)是个凸函数，最小值在所有偏导为0的地方，$\frac{\partial E(w)}{\partial w} = 2A^TAw - 2A^Ty = 0$
+
+由于A的列线性独立，所以ATA可逆，化简上述公式，
+
+$\begin{align}	& 2A^TAw - 2A^Ty = 0 \\	& \Rightarrow A^TAw = A^Ty \\ 	& \Rightarrow w = (A^TA)^{-1}A^Ty \\\end{align}$
+
+线性回归的本质是找到一个线性组合ww，使得因变量yy被由自变量AA的列的线性组合表示。但实际情况，绝大多数是无法找到这种完美的解。那么采取C(A)C(A)中与bb最近的向量作为其近似解。这个最近的向量，通过上面的推导，就是投影系数。可以想象一下三维空间中，直线投影到平面，通过三角关系，可以发现最近的向量是垂直的投影向量。
+
+#### 代数形式：
+
+记样本为$(x^{(i)},y^{(i)})$,对样本预测为$\hat y^{(i)}|_θ$，该记法表示该预测依赖于参数 θ 的选取。
 
 $y=\hat y^{(i)}|_θ + ε$，其中，ε 是一个误差函数，通常认为其服从正态分布，ε ～ $N(0,σ^2) $
 
-因此：$y - \hat y| _θ $～$N(0,σ^2) $       $ y$～$N(\hat y| _θ,σ^2) $   
+因此：$y - \hat y| _θ $～$N(0,σ^2) $  -------- $ y$～$N(\hat y| _θ,σ^2) $   
+
+$l(θ) = logL(θ) = log \prod_{i=1}^m \dfrac 1{\sqrt{2 π} \sigma}exp \big( - \dfrac{(y^{(i)} - θ^T x^{(i)})^2}{2\sigma^2}\big) $
+
+$=  \Sigma_{i=1}^m log\dfrac 1{\sqrt{2 π} \sigma}exp \big( - \dfrac{(y^{(i)} - θ^T x^{(i)})^2}{2\sigma^2}\big) $
+
+$=m  log\dfrac 1{\sqrt{2 π} \sigma}- \dfrac{1}{\sigma^2}*\dfrac{1}{2} \Sigma^m_{i=1}{(y^{(i)} - θ^T x^{(i)})^2}$
+
+转换为求极值的问题：
+
+ **代数形式：Y= ax+b**
+
+→导数/偏导数→ 在偏导数为0的地方能取到极值，且也是最值。分别对 a和b 求偏导数得到以下表达式：
+
+$\dfrac {\partial} {\partial a} = \Sigma_{i=1}^n 2x_i (ax_i+b-y_i)$
+
+$\dfrac {\partial} {\partial b} = \Sigma_{i=1}^n 2(ax_i+b-y_i)$
+
+通过对二元一次方程组 进行求解
+
+$ \Sigma_{i=1}^n 2x_i (ax_i+b-y_i) =0$
+
+$ \Sigma_{i=1}^n 2(ax_i+b-y_i) =0$
+
+得到：
+
+$a = \dfrac {n\Sigma_{i=1}^n x_i y_i - \Sigma_{i=1}^n x_i  \Sigma _{i=1}^n y_i }{n\Sigma_{i=1}^n x_i^2 - (\Sigma_{i=1}^n x_i)^2 }$
+
+$b = \dfrac {\Sigma_{i=1}^n x_i^2 \Sigma_{i=1}^ny_i - \Sigma_{i=1}^n x_i  \Sigma _{i=1}^n x_i y_i }{n\Sigma_{i=1}^n x_i^2 - (\Sigma_{i=1}^n x_i)^2 }$
+
 
 ------------备注---------------
 
