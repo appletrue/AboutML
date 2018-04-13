@@ -56,11 +56,17 @@ $y=\hat y^{(i)}|_θ + ε$，其中，ε 是一个误差函数，通常认为其�
 
 估计方差σ2，可以用
 
-$\begin{equation}\hat{\sigma}^2=\dfrac{1}{n-p-1}\sum_{	i=1}^{n}(y_i-\hat{y}_i)^2\end{equation}$
+$\begin{equation}\hat{\sigma}^2=\dfrac{1}{n-p-1}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2\end{equation}$
 
 和一般的方差的形式看起来不同，分母是n−p−1而不是n，是因为这样的估计才是σ2的无偏估计。
 
-$\begin{array}{cc}E(\hat{\sigma}^2)=E(\dfrac{1}{n-p-1}\sum_{	i=1}^{n}(y_i-\hat{y}_i)^2)\\=E(\dfrac{1}{n-p-1}[y-X(X^{T}X)^{-1}X^{T}y]^T[y-X(X^{T}X)^{-1}X^{T}y]）\\=E(\dfrac{1}{n-p-1}y^T[I_{n}-X(X^{T}X)^{-1}X^{T}]y）\\=\dfrac{n\sigma^2}{n-p-1}-\dfrac{1}{n-p-1}\text{tr}(X(X^TX)^{-1}X^Tyy^T) \\=\dfrac{n\sigma^2}{n-p-1}-\dfrac{\sigma^2}{n-p-1}\text{tr}(X(X^TX)^{-1}X^T) \\=\dfrac{n\sigma^2}{n-p-1}-\dfrac{(p+1)\sigma^2}{n-p-1} \\=\sigma^2\\\end{array}$
+$E(\hat{\sigma}^2)=E(\dfrac{1}{n-p-1}\sum_{	i=1}^{n}(y_i-\hat{y}_i)^2)$
+$=E(\dfrac{1}{n-p-1}[y-X(X^{T}X)^{-1}X^{T}y]^T[y-X(X^{T}X)^{-1}X^{T}y]）$
+$=E(\dfrac{1}{n-p-1}y^T[I_{n}-X(X^{T}X)^{-1}X^{T}]y）$
+$=\dfrac{n\sigma^2}{n-p-1}-\dfrac{1}{n-p-1}\text{tr}(X(X^TX)^{-1}X^Tyy^T) $
+$=\dfrac{n\sigma^2}{n-p-1}-\dfrac{\sigma^2}{n-p-1}\text{tr}(X(X^TX)^{-1}X^T) $
+$=\dfrac{n\sigma^2}{n-p-1}-\dfrac{(p+1)\sigma^2}{n-p-1} $
+$=\sigma^2$
 
 高维度带来的问题不止是在计算量上。例如在许多生物相关的问题中，数据的维度 非常高，但是由于收集数据需要昂贵的实验，因此可用的训练数据却相当少，这样的问题通常称为“small n, large P problem”——我们一般用 n 表示数据点的个数，用 p  表示变量的个数，即数据维度。当p>= n  的时候，不做任何其他假设或者限制的话，学习问题基本上是没法进行的。因为如果用上所有变量的话， p越大，通常会导致模型越复杂，但是反过来 n 有很小，于是就会出现很严重的 overfitting 问题。
 
