@@ -46,19 +46,25 @@ $\begin{equation}\hat{y} = X\hat{w} = X(X^{T}X)^{-1}X^{T}y\end{equation}$
 
 ####------ 矩阵推导：---------
 
-令矩阵A是系数矩阵,且A的列线性独立，一般A的第一列或最后一列是1，用于表示截距，但是这对我们的推导没有任何影响。y是我们的目标结果。现在需要计算一个权重向量w，使得差的平方错误最小，记作:
+令矩阵A是系数矩阵,且A的列线性独立，一般A的第一列或最后一列是1，用于表示截距，但是这对我们的推导没有任何影响。y是我们的目标结果。现在需要计算一个权重向量 ，使得差的平方错误最小，记作:
 
-$\begin{equation*}\begin{aligned}& \underset{x}{\text{min}} && E(w) \\& \text{s.t.} && E(w)=|Aw-y|^2\end{aligned}\end{equation*}$
+$\begin{equation*}\begin{aligned}& \underset{x}{\text{min}} && J(0) \\& \text{s.t.} && J(0)=|A0-y|^2\end{aligned}\end{equation*}$
 
 对E(x)做相关变化
 
-$\begin{align}	E(w) &= (Aw-y)^T(Aw-y) \\ 		 &= (w^TA^T-y^T)(Aw-y) \\ 		 &= w^TA^TAw - w^TA^Ty - y^TAw + y^Ty \\		 &= w^TA^TAw - y^TAw - y^TAw + y^Ty \\		 &= w^TA^TAw - 2y^TAw + y^Ty \\\end{align}$
+$\nabla J(0) = \nabla \frac {1}{2}(A0-y)^T(A0-y)$
 
-E(w)E(w)是个凸函数，最小值在所有偏导为0的地方，$\frac{\partial E(w)}{\partial w} = 2A^TAw - 2A^Ty = 0$
+$ = (0^TA^T-y^T)(A0-y) = 0^TA^TA0 - 0^TA^Ty - y^TA0 + y^Ty $
 
-由于A的列线性独立，所以ATA可逆，化简上述公式，
+$= 0^TA^TA0 - y^TA0 - y^TA0 + y^Ty = 0^TA^TA0 - 2y^TA0 + y^Ty $
 
-$\begin{align}	& 2A^TAw - 2A^Ty = 0 \\	& \Rightarrow A^TAw = A^Ty \\ 	& \Rightarrow w = (A^TA)^{-1}A^Ty \\\end{align}$
+E(0)是个凸函数，最小值在所有偏导为0的地方，$\frac{\partial E(0)}{\partial 0} = 2A^TA0 - 2A^Ty = 0$
+
+由于A的列线性独立，所以$A^TA$ 可逆，化简上述公式，求驻点，
+
+$2A^TA0 - 2A^Ty = 0 $  \Rightarrow A^TA0 = A^Ty $
+
+$\Rightarrow 0 = (A^TA)^{-1}A^Ty $
 
 线性回归的本质是找到一个线性组合ww，使得因变量yy被由自变量AA的列的线性组合表示。但实际情况，绝大多数是无法找到这种完美的解。那么采取C(A)C(A)中与bb最近的向量作为其近似解。这个最近的向量，通过上面的推导，就是投影系数。可以想象一下三维空间中，直线投影到平面，通过三角关系，可以发现最近的向量是垂直的投影向量。
 
