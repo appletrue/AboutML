@@ -6,7 +6,7 @@
 
 首先，对于普通的最小二乘线性回归，它的代价函数是：
 
-$F=\sum_{i=1}^{n}\left ( y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij}\right)$
+$F =\sum_{i=1}^{n}(y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij})$
 
 通过拟合系数β来使F最小。方法很简单，求偏导利用线性代数解方程组即可。
 
@@ -14,7 +14,7 @@ $F=\sum_{i=1}^{n}\left ( y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij}\right)$
 
 **岭回归在OLS回归模型的F上加上了惩罚项（l2范数）**，这样代价函数就成为：
 
-$\sum_{i=1}^{n}\left ( y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij}\right)+ \lambda\sum_{j=1}^p\beta^2_j$ ------(岭回归的代价函数)
+$\sum_{i=1}^{n}(y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij})+ \lambda\sum_{j=1}^p\beta^2_j$ ------(岭回归的代价函数)
 
 λ是一个非负的调节参数，可以看到：
 
@@ -26,7 +26,7 @@ $\sum_{i=1}^{n}\left ( y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij}\right)+ \lam
 
 **lasso回归的正项则就把二次项改成了一次绝对值（l1范数）**，具体为：
 
-$\sum_{i=1}^{n}\left ( y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij}\right)+ \lambda\sum_{j=1}^p\mid\beta_j\mid$ 
+$\sum_{i=1}^{n}(y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij})+ \lambda\sum_{j=1}^p\mid\beta_j\mid$ 
 
 一次项求导可以抹去变量本身，因此lasso回归的系数可以为0。这样可以起来真正的特征筛选效果。
 
