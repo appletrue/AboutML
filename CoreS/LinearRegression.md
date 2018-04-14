@@ -44,29 +44,29 @@ $\begin{equation}\hat{y} = X\hat{w} = X(X^{T}X)^{-1}X^{T}y\end{equation}$
 
 ![2X](https://github.com/appletrue/NoteML/blob/master/PICs/2X.jpg)
 
-####------ 矩阵推导：---------
+#### ------ 矩阵推导：---------
 
 令矩阵A是系数矩阵,且A的列线性独立，一般A的第一列或最后一列是1，用于表示截距，但是这对我们的推导没有任何影响。y是我们的目标结果。现在需要计算一个权重向量 ，使得差的平方错误最小，记作:
 
-$\begin{equation*}\begin{aligned}& \underset{x}{\text{min}} && J(0) \\& \text{s.t.} && J(0)=|A0-y|^2\end{aligned}\end{equation*}$
+$\begin{equation*}\begin{aligned}& \underset{x}{\text{min}} && J(\theta) \\& \text{s.t.} && J(\theta)=|A\theta-y|^2\end{aligned}\end{equation*}$
 
-对E(x)做相关变化
+对$J(\theta)$做相关变化
 
-$\nabla J(0) = \nabla \frac {1}{2}(A0-y)^T(A0-y)$
+$\nabla J(\theta) = \nabla \frac {1}{2}(A\theta-y)^T(A\theta-y)$
 
-$ = (0^TA^T-y^T)(A0-y) = 0^TA^TA0 - 0^TA^Ty - y^TA0 + y^Ty $
+$ = (\theta^TA^T-y^T)(A\theta-y) = \theta^TA^TA\theta - \theta^TA^Ty - y^TA\theta + y^Ty $
 
-$= 0^TA^TA0 - y^TA0 - y^TA0 + y^Ty = 0^TA^TA0 - 2y^TA0 + y^Ty $
+$= \theta^TA^TA\theta - y^TA\theta- y^TA\theta + y^Ty = \theta^TA^TA\theta - 2y^TA\theta + y^Ty $
 
-E(0)是个凸函数，最小值在所有偏导为0的地方，$\frac{\partial E(0)}{\partial 0} = 2A^TA0 - 2A^Ty = 0$
+E(0)是个凸函数，最小值在所有偏导为0的地方，$\dfrac{\partial J(\theta)}{\partial \theta} = 2A^TA\theta - 2A^Ty = 0$
 
 由于A的列线性独立，所以$A^TA$ 可逆，化简上述公式，求驻点，
 
-$2A^TA0 - 2A^Ty = 0 $  \Rightarrow A^TA0 = A^Ty $
+$2A^TA\theta - 2A^Ty = 0 $  $\Rightarrow A^TA\theta = A^Ty $
 
 $\Rightarrow 0 = (A^TA)^{-1}A^Ty $
 
-线性回归的本质是找到一个线性组合ww，使得因变量yy被由自变量AA的列的线性组合表示。但实际情况，绝大多数是无法找到这种完美的解。那么采取C(A)C(A)中与bb最近的向量作为其近似解。这个最近的向量，通过上面的推导，就是投影系数。可以想象一下三维空间中，直线投影到平面，通过三角关系，可以发现最近的向量是垂直的投影向量。
+线性回归的本质是找到一个线性组合w，使得因变量y被由自变量A的列的线性组合表示。但实际情况，绝大多数是无法找到这种完美的解。那么采取C(A)中与b最近的向量作为其近似解。这个最近的向量，通过上面的推导，就是投影系数。可以想象一下三维空间中，直线投影到平面，通过三角关系，可以发现最近的向量是垂直的投影向量。
 
 #### 代数形式：
 
@@ -104,7 +104,6 @@ $a = \dfrac {n\Sigma_{i=1}^n x_i y_i - \Sigma_{i=1}^n x_i  \Sigma _{i=1}^n y_i }
 
 $b = \dfrac {\Sigma_{i=1}^n x_i^2 \Sigma_{i=1}^ny_i - \Sigma_{i=1}^n x_i  \Sigma _{i=1}^n x_i y_i }{n\Sigma_{i=1}^n x_i^2 - (\Sigma_{i=1}^n x_i)^2 }$
 
-
 ------------备注---------------
 
 假设观察值yi都是不相关的，并且方差都是σ2，并且样本点是已知（且是中心化过了的，均值为0）的。推出协方差矩阵 $\begin{equation}Var(\hat{\beta}) = (X^{T}X)^{-1}\sigma^2\end{equation}$
@@ -119,9 +118,9 @@ $\begin{equation}\hat{\sigma}^2=\dfrac{1}{n-p-1}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2\
 
 $ E(\hat{\sigma}^2)=E(\dfrac{1}{n-p-1}\sum_{	i=1}^{n}(y_i-\hat{y}_i)^2)$
 
-$=E(\dfrac{1}{n-p-1}[y-X(X^{T}X)^{-1}X^{T}y]^T[y-X(X^{T}X)^{-1}X^{T}y]）$
+$）=E(\dfrac{1}{n-p-1}[y-X(X^{T}X)^{-1}X^{T}y]^T[y-X(X^{T}X)^{-1}X^{T}y]）$
 
-$=E(\dfrac{1}{n-p-1}y^T[I_{n}-X(X^{T}X)^{-1}X^{T}]y）$
+$）=E(\dfrac{1}{n-p-1}y^T[I_{n}-X(X^{T}X)^{-1}X^{T}]y）$
 
 $=\dfrac{n\sigma^2}{n-p-1}-\dfrac{1}{n-p-1}\text{tr}(X(X^TX)^{-1}X^Tyy^T) $
 
@@ -130,7 +129,6 @@ $=\dfrac{n\sigma^2}{n-p-1}-\dfrac{\sigma^2}{n-p-1}\text{tr}(X(X^TX)^{-1}X^T) $
 $=\dfrac{n\sigma^2}{n-p-1}-\dfrac{(p+1)\sigma^2}{n-p-1} =\sigma^2$
 
 高维度带来的问题不止是在计算量上。例如在许多生物相关的问题中，数据的维度 非常高，但是由于收集数据需要昂贵的实验，因此可用的训练数据却相当少，这样的问题通常称为“small n, large P problem”——我们一般用 n 表示数据点的个数，用 p  表示变量的个数，即数据维度。当p>= n  的时候，不做任何其他假设或者限制的话，学习问题基本上是没法进行的。因为如果用上所有变量的话， p越大，通常会导致模型越复杂，但是反过来 n 有很小，于是就会出现很严重的 overfitting 问题。
-
 
 
 参考：
