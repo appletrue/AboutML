@@ -20,13 +20,13 @@
 
 - 回归
 
-回归，指的是把实函数在样本点附近加以近似的有监督的函数近似问题。简单来讲，对于训练数据集，$\left ( \mathbf{x}^{\left ( i \right )},y^{\left ( i \right )} \right ),\; i=1\cdots n$,其中，$y^{\left ( i \right )}$为实数，通过学习得到一个函数：$\hat{y}=f\left ( \mathbf{x} \right )$
+回归，指的是把实函数在样本点附近加以近似的有监督的函数近似问题。简单来讲，对于训练数据集，$\left ( \mathbf{x}^{\left ( i \right )},y^{\left ( i \right )} \right )\; i=1\cdots n$,其中，$y^{ ( i  )}$为实数，通过学习得到一个函数：$\hat{y}=f\left ( \mathbf{x} \right )$
 
 常用的回归算法有：线性回归，Lasso，岭回归，回归树等。
 
 - 分类
 
-分类，指的是对于指定的模式进行识别的有监督的模式识别问题。简单来说，对于训练数据集 $\left ( \mathbf{x}^{\left ( i \right )},y^{\left ( i \right )} \right ),\; i=1\cdots n$,其中，$y^{\left ( i \right )}$为类别型数据，如 $\left \{ -1,1 \right \}$,通过学习得到一个函数：$\hat{y}=f\left ( \mathbf{x} \right )$
+分类，指的是对于指定的模式进行识别的有监督的模式识别问题。简单来说，对于训练数据集 $ ( \mathbf{x}^{( i )},y^{ ( i )} )\; i=1\cdots n$,其中，$y^{ (i)}$为类别型数据，如 $\{ -1,1 \}$,通过学习得到一个函数：$\hat{y}=f ( \mathbf{x} )$
 
 常用的分类算有有：SVM，Logistic回归，BP神经网络，朴素贝叶斯等。
 
@@ -85,22 +85,3 @@ $K\left ( x,c  \right )=exp\left ( -\dfrac{\left \| x-c \right \|^2}{2h^2} \righ
 #### 3、层级模型
 
 与参数相关的非参数模型，称为非线性模型。在非线性模型中，有一类是层级模型。层级模型中典型的是神经网络模型。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
