@@ -108,9 +108,9 @@ $ \Sigma_{i=1}^n 2(ax_i+b-y_i) =0$
 
 得到：
 
-$a = \dfrac {n\Sigma_{i=1}^n x_i y_i - \Sigma_{i=1}^n x_i  \Sigma _{i=1}^n y_i }{n\Sigma_{i=1}^n x_i^2 - (\Sigma_{i=1}^n x_i)^2 }$
+$a = \dfrac {n\sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i  \sum _{i=1}^n y_i }{n\sum_{i=1}^n x_i^2 - (\sum_{i=1}^n x_i)^2 }$
 
-$b = \dfrac {\Sigma_{i=1}^n x_i^2 \Sigma_{i=1}^ny_i - \Sigma_{i=1}^n x_i  \Sigma _{i=1}^n x_i y_i }{n\Sigma_{i=1}^n x_i^2 - (\Sigma_{i=1}^n x_i)^2 }$
+$b = \dfrac {\sum_{i=1}^n x_i^2 \sum_{i=1}^ny_i - \sum_{i=1}^n x_i  \sum _{i=1}^n x_i y_i }{n\sum_{i=1}^n x_i^2 - (\sum_{i=1}^n x_i)^2 }$
 
 ------------**备注**---------------
 
@@ -272,7 +272,7 @@ $= \nabla_\theta \left  (  \dfrac{1}{2}(\theta^TX^T-y^T)(X\theta-y) \right ) +\l
 
 $= \nabla_\theta \left  (  \dfrac{1}{2}(\theta^TX^TX\theta -\theta^TX^Ty -y^TX\theta+y^Ty) \right ) + \lambda \theta^2$
 
-$求驻点=  \dfrac{1}{2}\left  (2X^TX\theta -X^Ty -(y^TX)^T \right ) = X^TX\theta -X^Ty \xrightarrow{求驻点}0$      $ (X^TX+\lambda I)^{-1}X^Ty $
+$求驻点=  \dfrac{1}{2}\left  (2X^TX\theta -X^Ty -(y^TX)^T \right ) = X^TX\theta -X^Ty \xrightarrow{求驻点}0$  ------    $ (X^TX+\lambda I)^{-1}X^Ty $
 
 岭回归即L2正则化。
 
@@ -290,15 +290,15 @@ $求驻点=  \dfrac{1}{2}\left  (2X^TX\theta -X^Ty -(y^TX)^T \right ) = X^TX\the
 
 首先，对于普通的最小二乘线性回归，它的代价函数是：
 
-$\begin{equation}J_R(w)=\frac{1}{2}\|y-Xw\|^2+\frac{\lambda}{2}\|w\|^2\end{equation}$
+$J_R(w)=\frac{1}{2}\|y-Xw\|^2+\frac{\lambda}{2}\|w\|^2 $
 
-有解析解：$\begin{equation}\hat{w}_R = (X^{T}X+\lambda I)^{-1}X^{T}y\end{equation}$
+有解析解：$\hat{w}_R = (X^{T}X+\lambda I)^{-1}X^{T}y $
 
 其中λ>0是一个参数，有了正则项以后解就有了很好的性质，首先是对w的模做约束，使得它的数值会比较小，很大程度上减轻了overfitting的问题；其次是上面求逆部分肯定可以解，在实际使用中ridge regression的作用很大，通过调节参数λ，可以得到不同的回归模型。
 
 ridge regression可以用下面的优化目标形式表达：
 
-$\begin{equation}\min_{w} \frac{1}{2}\|y-Xw\|^2, \quad s.t. \|w\|_2<\theta\end{equation}$
+$\min_{w} \frac{1}{2}\|y-Xw\|^2, \quad s.t. \|w\|_2<\theta$
 
 优化线性回归的目标，但是条件是w的模长不能超过限制θ。
 
@@ -344,11 +344,11 @@ $\begin{pmatrix}400+10&  -201\\  -801   & 400+10\end{pmatrix}$ 解为 x1=5.888,x
 
 看一下几种范式(norm)的定义， 
 
-$\begin{equation}\|w\|_2=(\sum_{i}{w_i}^{2})^{1/2}\end{equation}$
+$\|w\|_2=(\sum_{i}{w_i}^{2})^{1/2}$
 
-$\begin{equation}\|w\|_1=\sum_{i}|w_i|\end{equation}$
+$\begin{equation}\|w\|_1=\sum_{i}|w_i|$
 
-$\begin{equation}\|w\|_0=\sum_i 1(w_i \neq 0)\end{equation}$
+$\|w\|_0=\sum_i 1(w_i \neq 0)$
 
 Ridge Regression，对w做2范式约束，就是把解约束在一个l2-ball里面，放缩是对球的半径放缩，因此w的每一个维度都在以同一个系数放缩，通过放缩不会产生稀疏的解——即某些w的维度是0。
 
@@ -362,7 +362,7 @@ l1l1-norm（1范式）也可以达到稀疏的效果，是0范式的最优凸近
 
 $\sum_{i=1}^{n}(y_i - \beta _0 - \sum_{j=1}^p \beta_j x_{ij})+ \lambda\sum_{j=1}^p\mid\beta_j\mid$ 
 
-$\begin{equation}\min_{w} \frac{1}{2}\|y-Xw\|^2, \quad s.t. \|w\|_1<\theta\end{equation}$
+$\min_{w} \frac{1}{2}\|y-Xw\|^2, \quad s.t. \|w\|_1<\theta$
 
 约束在一个l1l1-ball里面。ridge和lasso的效果见下图：
 
@@ -380,7 +380,7 @@ LASSO具有特征选择的作用
 
 ##### Lasso稀疏性的进一步理解：
 
-类似Ridge，我们也可以写出Lasso的优化目标函数：$\begin{equation}J_L(w)=\frac{1}{2}\|y-Xw\|^2+\lambda\sum_{i}|w_i|\end{equation}$
+类似Ridge，我们也可以写出Lasso的优化目标函数：$J_L(w)=\frac{1}{2}\|y-Xw\|^2+\lambda\sum_{i}|w_i|$
 
 一般的思路，我们希望对JL(w)JL(w)求导数=0求出最优解，即▽JL(w)=0，但是l1-norm在0点是连续不可导的，没有gradient，这个时候需要subgradient：
 
@@ -392,45 +392,43 @@ LASSO具有特征选择的作用
 
 在x0点不是全局最小值，因为subgradient不包含0，而原点0就是全局最小值。如果要证明也很显然，将0∈∂f(x0)带入前面的定义1中，就得到f(x)≥f(x0)。
 
-为了方便说明，需要做一个简化假设，即数据X的列向量是orthonormal的[2,3]，即$X^TX=I$（当然没有这个假设Lasso也是可以运作的）。于是线性回归的最优解是 $\begin{equation}w^* =X^{T}y\end{equation}$
+为了方便说明，需要做一个简化假设，即数据X的列向量是orthonormal的[2,3]，即$X^TX=I$（当然没有这个假设Lasso也是可以运作的）。于是线性回归的最优解是 $w^* =X^{T}y$
 
 假设lasso问题JL(w)的全局最优解是w¯∈Rn，考察它的任意一个维度$\bar{w}^j$，需要分别讨论两种情况
 
 **情况1：gradient存在的区间，即w¯j≠0 
-由于gradient在最小值点=0，所以 $\begin{equation}{\left.\begin{matrix}\frac{\partial J_L(w)}{\partial w^j}\end{matrix}\right|_{\bar{w}^j}}=0\end{equation}$
+由于gradient在最小值点=0，所以 ${\left.\begin{matrix}\frac{\partial J_L(w)}{\partial w^j}\end{matrix}\right|_{\bar{w}^j}}=0$
 
-$\begin{equation}-(X^{T}y-X^{T}X\bar{w})_j + \lambda\cdot \text{sgn}(\bar{w}^j)=0\end{equation}$  其中λ≥0。所以 
+$-(X^{T}y-X^{T}X\bar{w})_j + \lambda\cdot \text{sgn}(\bar{w}^j)=0$  其中λ≥0。所以 
 
-$\begin{equation}\bar{w}^j=w^{*j} - \lambda\cdot\text{sgn}(\bar{w}^j)\end{equation}$
+$\bar{w}^j=w^{*j} - \lambda\cdot\text{sgn}(\bar{w}^j)$
 
 看出，w¯j和w∗j是同号的，因此可以得出 
 
-$\begin{equation}\bar{w}^j=w^{*j} - \lambda\cdot\text{sgn}(\bar{w}^j)=\text{sgn}(w^{*j})(|w^{*j}|-\lambda)\\(|w^{*j}|-\lambda)=|\bar{w}^j|\geq 0\end{equation}$
+$\bar{w}^j=w^{*j} - \lambda\cdot\text{sgn}(\bar{w}^j)=\text{sgn}(w^{*j})(|w^{*j}|-\lambda)\\(|w^{*j}|-\lambda)=|\bar{w}^j|\geq 0$
 
-$\begin{equation}\bar{w}^j=\text{sgn}(w^{*j})(|w^{*j}|-\lambda)_+\\\end{equation}$
+$\bar{w}^j=\text{sgn}(w^{*j})(|w^{*j}|-\lambda)_+\\$
 
 其中(x)+(x)+表示取xx的正数部分；(x)+=max(x,0)(x)+=max(x,0)。
 
 **情况2：gradient不存在，即w¯j=0w¯j=0** 
 根据前面的性质1，如果w¯jw¯j是最小值，则 
 
-$\begin{equation}\textbf{0} \in \partial J_L(\bar{w})=-(X^{T}y-X^{T}X\bar{w}) + \lambda\cdot \textbf{e} = \bar{w} - w^{*}+\lambda\cdot \textbf{e}\end{equation}$
+$\textbf{0} \in \partial J_L(\bar{w})=-(X^{T}y-X^{T}X\bar{w}) + \lambda\cdot \textbf{e} = \bar{w} - w^{*}+\lambda\cdot \textbf{e}$
 
 其中ee是一个向量，每一个元素ej∈[−1,1]ej∈[−1,1]，使得0=−w∗j+λ⋅ej0=−w∗j+λ⋅ej成立。因此
 
-$\begin{equation}|w^{*j}|=\lambda |e^j|\leq \lambda\end{equation}$ 所以和情况（1）和（2）可以合并在一起。
+$|w^{*j}|=\lambda |e^j|\leq \lambda$ 所以和情况（1）和（2）可以合并在一起。
 
-Lasso的最优解： $\begin{equation}\bar{w}^j=\text{sgn}(w^{*j})(|w^{*j}|-\lambda)_+\\\end{equation}$
+Lasso的最优解： $\bar{w}^j=\text{sgn}(w^{*j})(|w^{*j}|-\lambda)_+\\$
 
-$\begin{equation}\hat{w}_R=\frac{1}{1+\lambda}w^*\\\end{equation}$
+$\hat{w}_R=\frac{1}{1+\lambda}w^*\\$
 
 ridge实际上就是做了一个放缩，而lasso实际是做了一个soft thresholding，把很多权重项置0了，所以就得到了稀疏的结果！ 
 
 ![20180416xxx](https://github.com/appletrue/NoteML/blob/master/PICs/20180416xxx.jpg)
 
 除了做回归，Lasso的稀疏结果天然可以做机器学习中的另外一件事——特征选择feature selection，把非零的系数对应的维度选出即可，达到对问题的精简、去噪，以及减轻overfitting。
-
-
 
 ------
 
