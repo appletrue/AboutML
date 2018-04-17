@@ -28,6 +28,20 @@ $f'(x_0) = lim_{\Delta x \to 0 } \frac {\Delta y}{\Delta x} = lim_{\Delta x \to 
 
 也可以记为:  $或y'|_{x-x_0}, \frac{dy}{dx}|_{x-x_0} 或 \frac {df(x)}{dx}|_{x-x0}$
 
+**导数：**一个一元函数函数在某一点的导数描述了这个函数在这一点附近的变化率。
+
+**梯度:**多元函数的导数就是梯度。
+
+- 一阶导数，即梯度（gradient）：
+
+$\nabla f(\bf{X}) = \frac{\partial f(\bf{X})}{\partial \bf{X}} = \begin{bmatrix}\frac{\partial f(\bf{X})}{\partial {x_1}}  \\\frac{\partial f(\bf{X})}{\partial {x_2}}  \\\vdots\\\frac{\partial f(\bf{X})}{\partial {x_n}}  \\\end{bmatrix}$
+
+- 二阶导数，Hessian矩阵：
+
+$\bf{H}(x)= \nabla^2f(\bf{X}) = \begin{bmatrix}\frac{\partial ^2 f(\bf{X})}{\partial {x_1}^2}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_1}\partial {x_2}}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_1}\partial {x_n}}  &\\\frac{\partial ^2 f(\bf{X})}{\partial {x_2}\partial {x_1}}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_2}^2}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_2}\partial {x_n}}  &\\\vdots & \vdots & \ddots & \vdots \\\frac{\partial ^2 f(\bf{X})}{\partial {x_n}\partial {x_1}}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_n}\partial {x_2}}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_n}^2}  &\\\end{bmatrix}$
+
+一阶导数和二阶导数经常记为f′(x)和f′′(x)
+
 ## 微分
 
 设函数 y=f(x) 在某区间 z 内有定义.对于 z 内一点 $x_0 $,当 $x_0 $变动到附近的$x_0+ \Delta x$($x_0+ \Delta x$也在此区间内)时,如果函数的增量   $\Delta y = f(x_0+ \Delta x) - f(x_0) $可表示为  $\Delta y = A \Delta x + O(\Delta x) $ ,(其中A 是不依赖于 $\Delta x$的常数),而 $O(\Delta x) $是比$\Delta x$高阶的无穷小,那么称函数 f(x) 在点 $x_0$是可微的,且$A \Delta x$称作函数在点$x_0$想应于自变量增量$\Delta x$的微分,记$dy$,即$\Delta y = A \Delta x $,$是dy 是\Delta y $的线性主部。通常把自变量x 的增量 $\Delta x$称为自变量的微分,记作$dx$,即 $dx=\Delta x$
@@ -114,7 +128,46 @@ $或 \frac {\partial Z}{\partial x}|_{x=x_0,y=y_0},\frac {\partial f}{\partial x
 |$e^x$|$e^x$|
 |lnx|1/x|
 
+## 矩阵求导总结
 
+（1）对标量求导
+
+- 标量关于标量x的求导：$\dfrac {\partial y}{\partial x}$
+- 向量关于标量x的求导： 向量$y = \begin {bmatrix} y_1 \\ y_2\\ \vdots \\ y_n\end{bmatrix}$关于标量x 的求导就是 y 的每一个元素分别对x求导，可以表示为 $\frac {\partial \bf y}{\partial x} = \begin {bmatrix} \frac{\partial y_1}{\partial x} \\ \frac{\partial y_2}{\partial x} \\ \vdots \\ \frac{\partial y_n}{\partial x} \end{bmatrix}$
+- 矩阵·关于标量x的求导： 
+  矩阵对标量的求导类似于向量关于标量的求导，也就是矩阵的每个元素分别对标量x求导 
+
+$\frac {\partial \bf Y}{\partial x} = \begin {bmatrix} \frac{\partial y_{11} }{\partial x } & \frac{\partial   y_{12} }{\partial x }& \cdots & \frac{\partial y_{1n} }{\partial x }  \\  \frac{\partial  y_{21}}{\partial x } & \frac{\partial y_{22}}{\partial x }   & \cdots &  \frac{\partial y_{2n}}{\partial x }  \\ \vdots & \vdots & \ddots & \vdots \\  \frac{\partial y_{n1} }{\partial x } &  \frac{\partial y_{n2} }{\partial x } & \cdots &  \frac{\partial y_{nn}}{\partial x }  \end{bmatrix}$
+
+（2）对向量求导
+
+- 标量关于向量x的导数 
+
+ 标量y 关于向量 ${\bf x } = \begin {bmatrix} x_1 \\ x_2\\ \vdots \\ x_n\end{bmatrix}$的求导可以表示为 $= \begin {bmatrix} \frac{\partial y}{\partial x_{1} }\ \frac{\partial y}{\partial x_{2} } \ \cdots \ \frac{\partial y}{\partial x_{n} } \end{bmatrix}$
+
+- 向量关于向量 x 的导数 
+
+向量函数（即函数组成的向量）${\bf y} = \begin {bmatrix} y_1 \\ y_2\\ \vdots \\ y_n\end{bmatrix}$关于${\bf x } = \begin {bmatrix} x_1 \\ x_2\\ \vdots \\ x_n\end{bmatrix}$的导数 
+
+$\frac {\partial \bf y}{\partial \bf x} = \begin {bmatrix} \frac{\partial y_{1} }{\partial x_{1} } & \frac{\partial   y_{1} }{\partial x_{2}  }& \cdots & \frac{\partial y_{1}  }{\partial x_{n} }  \\  \frac{\partial  y_{2}}{\partial x_{1}  } & \frac{\partial y_{2}}{\partial x_{2} }   & \cdots &  \frac{\partial y_{2}}{\partial x_{n} }  \\ \vdots & \vdots & \ddots & \vdots \\  \frac{\partial y_{n} }{\partial x_{1}  } &  \frac{\partial y_{n} }{\partial x_{2} } & \cdots &  \frac{\partial y_{n}}{\partial x_{n} }  \end{bmatrix}$ 此时获得的矩阵 $\dfrac {\partial y}{\partial x}$ 叫做Jacobian 矩阵。
+
+- 矩阵关于向量的导数 
+
+矩阵${\bf Y} = \begin {bmatrix} y_{11} & y_{12} & \cdots & y_{1n} \\ y_{21} & y_{22} & \cdots & y_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ y_{n1} & y_{n2} & \cdots & y_{nn} \end{bmatrix}$关于 ${\bf x } = \begin {bmatrix} x_1 \\ x_2\\ \vdots \\ x_n\end{bmatrix}$的导数是推导中最复杂的一种，表示为
+
+$\frac {\partial \bf Y}{\partial \bf x} = \begin {bmatrix} \frac{\partial y_{11} }{\partial x_{1} } & \frac{\partial   y_{1n} }{\partial x_{2}  }& \cdots & \frac{\partial y_{1n}  }{\partial x_{n} }  \\  \frac{\partial  y_{21}}{\partial x_{1}  } & \frac{\partial y_{22}}{\partial x_{2} }   & \cdots &  \frac{\partial y_{2n}}{\partial x_{n} }  \\ \vdots & \vdots & \ddots & \vdots \\  \frac{\partial y_{n1} }{\partial x_{1}  } &  \frac{\partial y_{n2} }{\partial x_{2} } & \cdots &  \frac{\partial y_{nn}}{\partial x_{n} }  \end{bmatrix}$
+
+（3）对矩阵求导
+
+一般只考虑标量关于矩阵的导数，即标量y 对矩阵 X 的导数，此时的导数是梯度矩阵，可以表示为下式：
+
+$\dfrac {\partial y}{\partial X} =\begin {bmatrix} \frac{\partial y }{\partial x_{11} } & \frac{\partial   y }{\partial x_{21}  }& \cdots & \frac{\partial y  }{\partial x_{n1} }  \\  \frac{\partial  y}{\partial x_{12}  } & \frac{\partial y}{\partial x_{22} }   & \cdots &  \frac{\partial y}{\partial x_{n2} }  \\ \vdots & \vdots & \ddots & \vdots \\  \frac{\partial y }{\partial x_{1n}  } &  \frac{\partial y }{\partial x_{2n} } & \cdots &  \frac{\partial y}{\partial x_{nn} }  \end{bmatrix}$
+
+下图是机器学习中常见的矩阵求导形式，可供参考
+
+a 是实数，β,X是向量，A,B,C 是与X 无关的矩阵，
+
+$\dfrac {\partial β^TX}{ X} = β$ ,  $\dfrac {\partial X^TX}{ X} = X$ , $\dfrac {\partial X^TAX}{ \partial X} = (A+A^T)X$
 ------
 
 参考书目：
