@@ -34,11 +34,11 @@ $f'(x_0) = lim_{\Delta x \to 0 } \frac {\Delta y}{\Delta x} = lim_{\Delta x \to 
 
 - 一阶导数，即梯度（gradient）：
 
-$\nabla f(\bf{X}) = \frac{\partial f(\bf{X})}{\partial \bf{X}} = \begin{bmatrix}\frac{\partial f(\bf{X})}{\partial {x_1}}  \\\frac{\partial f(\bf{X})}{\partial {x_2}}  \\\vdots\\\frac{\partial f(\bf{X})}{\partial {x_n}}  \\\end{bmatrix}$
+$\nabla f(\bf{X}) = \frac{\partial f(\bf{X})}{\partial \bf{X}} = \begin{bmatrix}\frac{\partial f(\bf{X})}{\partial {x_1}}  \\\frac{\partial f(\bf{X})}{\partial {x_2}}  \\\vdots\\\frac{\partial f(\bf{X})}{\partial {x_n}}  \\ \end{bmatrix}$
 
 - 二阶导数，Hessian矩阵：
 
-$\bf{H}(x)= \nabla^2f(\bf{X}) = \begin{bmatrix}\frac{\partial ^2 f(\bf{X})}{\partial {x_1}^2}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_1}\partial {x_2}}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_1}\partial {x_n}}  &\\\frac{\partial ^2 f(\bf{X})}{\partial {x_2}\partial {x_1}}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_2}^2}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_2}\partial {x_n}}  &\\\vdots & \vdots & \ddots & \vdots \\\frac{\partial ^2 f(\bf{X})}{\partial {x_n}\partial {x_1}}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_n}\partial {x_2}}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_n}^2}  &\\\end{bmatrix}$
+$\bf{H}(x)= \nabla^2f(\bf{X}) = \begin{bmatrix}\frac{\partial ^2 f(\bf{X})}{\partial {x_1}^2}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_1}\partial {x_2}}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_1}\partial {x_n}}  &\\\frac{\partial ^2 f(\bf{X})}{\partial {x_2}\partial {x_1}}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_2}^2}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_2}\partial {x_n}}  &\\\vdots & \vdots & \ddots & \vdots \\\frac{\partial ^2 f(\bf{X})}{\partial {x_n}\partial {x_1}}  & \frac{\partial ^2 f(\bf{X})}{\partial {x_n}\partial {x_2}}  & \cdots & \frac{\partial ^2 f(\bf{X})}{\partial {x_n}^2}  &\\ \end{bmatrix}$
 
 一阶导数和二阶导数经常记为f′(x)和f′′(x)
 
