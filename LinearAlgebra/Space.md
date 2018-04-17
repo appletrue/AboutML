@@ -5,7 +5,7 @@
 
 $X=  \begin {bmatrix} x_1\\x_2\\ \vdots \\x_n\\ \end{bmatrix}$
 
-- **矩阵（matrix）**：矩阵是二维数组，我们通常赋予矩阵粗体大写变量名称，比如 A 。如果一个矩阵高度是m，宽度是n，那么说A∈Rm×nA∈Rm×n 。一个矩阵可以表示如下：
+- **矩阵（matrix）**：矩阵是二维数组，我们通常赋予矩阵粗体大写变量名称，比如 A 。如果一个矩阵高度是m，宽度是n，那么说A∈Rm×n 。一个矩阵可以表示如下：
 
 $A= \begin{bmatrix} x_{11} &x_{12}\\ x_{21} & x_{22}\\  \end{bmatrix}$
 
@@ -85,9 +85,9 @@ $\forall x,y $, $\begin{bmatrix} 3 \\ 5 \end{bmatrix}x + \begin{bmatrix} 4 \\ 7 
 
 希尔伯特空间是公设化数学和量子力学的关键性概念之一。
 
-------
+-------------------------------------
 
-## **矩阵和向量相乘**
+## 矩阵和向量相乘
 
 - **矩阵乘法**：矩阵运算中最重要的操作之一。两个矩阵A和B 的矩阵乘积(matrix product)是第三个矩阵C 。矩阵乘法中A 的列必须和 B的行数相同。即如果矩阵 A的形状是 m×n，矩阵B的形状是 n×p，那么矩阵 C的形状就是 m×p。即 C=A×B
 
@@ -97,7 +97,7 @@ $\forall x,y $, $\begin{bmatrix} 3 \\ 5 \end{bmatrix}x + \begin{bmatrix} 4 \\ 7 
 
 - 矩阵乘积的转置 (向量也是一种特殊的矩阵) 
 
-$(\bf AB)^T = B ^T A^T$  ===*===$\bf x ^T y = (x^T y)^T = y^T x$
+$ (AB)^T = B^T A^T$  ===*===$\bf x ^T y = (x^T y)^T = y^T x$
 
 - **内积：——点积，数量积**
 
@@ -117,13 +117,15 @@ $(\bf AB)^T = B ^T A^T$  ===*===$\bf x ^T y = (x^T y)^T = y^T x$
 
 ## 范数
 
-需要衡量一个向量的大小，在机器学习中，使用称为范数（norm）的函数来衡量向量大小，形式上， Lp范数如下：$，其中|| x||_p = (\sum_i |x_i|^p)^\frac{1}{p}，其中 p∈R,p≥1$
+需要衡量一个向量的大小，在机器学习中，使用称为范数（norm）的函数来衡量向量大小，形式上， Lp范数如下：其中$|| x||_p = (\sum_i |x_i|^p)^\frac{1}{p}$，其中 p∈R,p≥1
 
 范数是将向量映射到非负值的函数。直观上来说，向量 x的范数就是衡量从原点到 x的距离。更严格来说，范数满足下列性质的函数：
 
 $f(x)=0 \implies x =0$
+
 $ f(x+y) \leq f(x) + f(y)$
-$\forall \alpha \in \Bbb R,  f(\alpha  x) = |\alpha|f( x)$
+
+$\forall \alpha \in \Bbb R,  f(\alpha x) = |\alpha|f(x)$
 
 当 p=2时， L2被称作欧几里得范数（Euclidean norm）。它表示从原点出发到向量x确定的点的欧几里得距离。L2范数常被用来衡量向量的大小，因为它便于求导计算（如对向量中每个元素的导数只取决于对应的元素，但是它也有缺陷，即它在原点附近增长得十分缓慢），可以简单用点积$x^Tx$来计算。
 
@@ -137,4 +139,4 @@ $||x||_\infty = max |x_i|$
 
 两个向量的点积(dot product)也可以用范数来表示。具体地 $\bf x \top y = ||x||_2||y||_2 \cos \theta$
 
-矩阵的范数（matrix norm）,最常用的就是 Frobenius norm,$||A||_F = (\sum_i \sum_j |a_{ij}|^2)^{1/2}$
+矩阵的范数（matrix norm）,最常用的就是 Frobenius norm, $\mid\mid A\mid\mid_{F} = \left ( \sum_i \sum_j {\mid a_{ij}\mid}^2 \right )^{frac 1 2}$
