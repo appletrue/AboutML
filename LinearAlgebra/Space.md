@@ -3,16 +3,16 @@
 - **标量（scalar）**：一个标量就是一个单独的数。用斜体表示标量，如 s∈R.
 - **向量（vector）**：一个向量是一列数，我们用粗体的小写名称表示向量。比如 x，将向量x 写成方括号包含的纵柱： 
 
-${\bf x}=  \begin {bmatrix} x_1\\x_2\\ \vdots \\x_n\\ \end{bmatrix}$
+$X=  \begin {bmatrix} x_1\\x_2\\ \vdots \\x_n\\ \end{bmatrix}$
 
 - **矩阵（matrix）**：矩阵是二维数组，我们通常赋予矩阵粗体大写变量名称，比如 A 。如果一个矩阵高度是m，宽度是n，那么说A∈Rm×nA∈Rm×n 。一个矩阵可以表示如下：
 
-${\bf A}= \begin{bmatrix} x_{11} &x_{12}\\ x_{21} & x_{22}\\  \end{bmatrix}$
+$A= \begin{bmatrix} x_{11} &x_{12}\\ x_{21} & x_{22}\\  \end{bmatrix}$
 
 - **张量（tensor）**：某些情况下，我们会讨论不止维坐标的数组。如果一组数组中的元素分布在若干维坐标的规则网络中，就将其称为张量。用A 表示，如张量中坐标为(i,j,k)的元素记作$A_{i,j,k}$
 - **转置（transpose）**：矩阵的转置是以对角线为轴的镜像，这条从左上角到右下角的对角线称为主对角线（main diagonal）。将矩阵A的转置表示为$A^T$。定义如下： $(A^⊤)_{i,j}=A_{j,i}$
 
-${\bf A} = \begin{bmatrix} x_{11} &x_{12}\\ x_{21} & x_{22}\\ x_{31} & x_{32} \end{bmatrix} \implies {\bf A^\top}= \begin{bmatrix} x_{11} &x_{21}&x_{31} \\ x_{21} & x_{22}& x_{32} \end{bmatrix}$
+$A= \begin{bmatrix} x_{11} &x_{12}\\ x_{21} & x_{22}\\ x_{31} & x_{32} \end{bmatrix} \implies  A^T= \begin{bmatrix} x_{11} &x_{21}&x_{31} \\ x_{21} & x_{22}& x_{32} \end{bmatrix}$
 
 ### 线性变换与向量空间
 
@@ -91,7 +91,7 @@ $\forall x,y $, $\begin{bmatrix} 3 \\ 5 \end{bmatrix}x + \begin{bmatrix} 4 \\ 7 
 
 - **矩阵乘法**：矩阵运算中最重要的操作之一。两个矩阵A和B 的矩阵乘积(matrix product)是第三个矩阵C 。矩阵乘法中A 的列必须和 B的行数相同。即如果矩阵 A的形状是 m×n，矩阵B的形状是 n×p，那么矩阵 C的形状就是 m×p。即 C=A×B
 
-其中的乘法操作定义为:  ${\bf C}_{i,j} = \sum_k {\bf A}_{i,k} {\bf B}_{k,j}$
+其中的乘法操作定义为:  $ C_{i,j} = \sum_k A_{i,k} B_{k,j}$
 
 矩阵乘积服从分配律，结合律，但是矩阵乘法没有交换律，
 
