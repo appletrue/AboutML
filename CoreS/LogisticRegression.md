@@ -30,7 +30,7 @@ Cramer在他的文章中有更加详细的讨论。它是由数学家对人口�
 
 随机变量X服从逻辑斯蒂分布，即X的累积分布函数为上文提到过的logistic function。对分布函数求导得到了概率密度函数。
 
-$F(x) = P(X \leqslant x) = \dfrac{1}{1+e^{-(x-\mu)/\gamma}}$
+$F(x) = P(X <= x) = \dfrac{1}{1+e^{-(x-\mu)/\gamma}}$
 
 $f(x) = F’(x) = \dfrac{e^{-(x-\mu)/\gamma}} { \gamma (1+e^{-(x-\mu)/\gamma})^2 }$
 
