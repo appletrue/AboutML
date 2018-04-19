@@ -52,7 +52,7 @@ $f(x) = F’(x) = \dfrac{e^{-(x-\mu)/\gamma}} { \gamma (1+e^{-(x-\mu)/\gamma})^2
 
 ![20180419lr02](https://github.com/appletrue/NoteML/blob/master/PICs/20180419lr02.png)
 
-目标是判断圆圈属于哪一类。也就是说逻辑回归的目标是找到一个有足够好区分度的决策边界，从而能够将两类很好的分开。假设已经存在这样一个边界，针对于图中这种线性可分的情况，这条边界是输入特征向量的线性组合，假设输入的特征向量为$x\in R^n$(图中输入向量为二维)，Y取值为0，1。那么决策边界可以表示为$w1x1+w2x2+b=0$，假如存在一个例子使得$hw(x)=w1x1+w2x2+b>0$，那么可以判断它类别为1，这个过程实际上是感知机，即只通过决策函数的符号来判断属于哪一类。而逻辑回归需要再进一步，它要找到分类概率P(Y=1)与输入向量x的直接关系，然后通过比较概率值来判断类别，令决策函数的输出值$w^Tx+b$等于概率值比值取对数$log{\dfrac{P(Y=1|x)}{1-P(Y=1|x)}}$，求解这个式子得到了输入向量x下导致产生两类的概率为:
+目标是判断圆圈属于哪一类。也就是说逻辑回归的目标是找到一个有足够好区分度的决策边界，从而能够将两类很好的分开。假设已经存在这样一个边界，针对于图中这种线性可分的情况，这条边界是输入特征向量的线性组合，假设输入的特征向量为$x\in R^n$(图中输入向量为二维)，Y取值为0，1。那么决策边界可以表示为$w_1x_1+w_2x_2+b=0$，假如存在一个例子使得$hw(x)=w_1x_1+w_2x_2+b>0$，那么可以判断它类别为1，这个过程实际上是感知机，即只通过决策函数的符号来判断属于哪一类。而逻辑回归需要再进一步，它要找到分类概率P(Y=1)与输入向量x的直接关系，然后通过比较概率值来判断类别，令决策函数的输出值$w^Tx+b$等于概率值比值取对数$log{\dfrac{P(Y=1|x)}{1-P(Y=1|x)}}$，求解这个式子得到了输入向量x下导致产生两类的概率为:
 
 $P(Y=1|x)=\dfrac{e^{w\cdot x+b}}{1+e^{w\cdot x+b}} \:\:\:\:\:\:\:\:\:(1)$
 
@@ -168,7 +168,7 @@ $\frac{\partial{J}}{\partial{\theta}} = -\frac{1}{n}\sum_i (y_i - y_i^*)x_i + \l
 
 ![20180419decision_boundary_1](https://github.com/appletrue/NoteML/blob/master/PICs/20180419decision_boundary_1.png)
 
-![20180419gradi_descent](https://github.com/appletrue/NoteML/blob/master/PICs/20180419gradi_descent.png)
+![20180419decision_boun](https://github.com/appletrue/NoteML/blob/master/PICs/20180419decision_boun.png)
 
 左图是一个线性可分的数据集，右图在原始空间中线性不可分，但是在特征转换 $[x_1, x_2] => [x_1, x_2, x_1^2, x_2^2, x_1x_2]$ 后的空间是线性可分的，对应的原始空间中分类边界为一条类椭圆曲线。
 
@@ -182,9 +182,9 @@ $J(\theta) = -\frac{1}{N}\sum {y\log{g(\theta^T x)} + (1-y)\log{(1-g(\theta^T x)
 
 一般情况下，取p=1或p=2，分别对应L1，L2正则化，两者的区别可以从下图中看出来，L1正则化（左图）倾向于使参数变为0，因此能产生稀疏解。
 
-![20180419lr01](https://github.com/appletrue/NoteML/blob/master/PICs/20180419lr01.png)
+![20180419l2_reg](https://github.com/appletrue/NoteML/blob/master/PICs/20180419l2_reg.png)
 
-![20180419lr02](https://github.com/appletrue/NoteML/blob/master/PICs/20180419lr02.png)
+![20180419lll2_reg](https://github.com/appletrue/NoteML/blob/master/PICs/20180419lll2_reg.png)
 
 实际应用时，由于我们数据的维度可能非常高，L1正则化因为能产生稀疏解，使用的更为广泛一些。
 
